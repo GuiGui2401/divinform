@@ -8,25 +8,26 @@ const scrollTo = (hash) => {
 }
 
 const NAV = [
-  { label: 'Accueil',           hash: 'hero' },
-  { label: 'Imagerie médicale', hash: 'produits' },
-  { label: 'Laboratoire',       hash: 'produits' },
-  { label: 'Nos engagements',   hash: 'pourquoi' },
-  { label: 'Contact',           hash: 'contact' },
+  { label: 'Accueil',              hash: 'hero' },
+  { label: 'Produits laitiers',    hash: 'produits' },
+  { label: 'Viandes & charcuterie',hash: 'produits' },
+  { label: 'Œufs & volaille',      hash: 'produits' },
+  { label: 'Nos engagements',      hash: 'pourquoi' },
+  { label: 'Contact',              hash: 'contact' },
 ]
 
 const DEFAULT_SERVICES = [
-  { label: 'Maintenance technique' },
-  { label: 'Formation du personnel' },
-  { label: 'Installation sur site' },
-  { label: 'Consommables & accessoires' },
+  { label: 'Vente directe du producteur' },
+  { label: 'Produits fermiers frais' },
+  { label: 'Livraison locale' },
+  { label: 'Paniers & colis fermiers' },
 ]
 
 export default function Footer() {
   const { get, list } = useSettings()
   const logoImg  = get('logo_image_url')
-  const siteName = get('site_name', 'Medex65')
-  const email    = get('email', 'info@medex237.com')
+  const siteName = get('site_name', 'Ferme Divinform')
+  const email    = get('email', 'contact@divinform.com')
   const services = list('footer_services', DEFAULT_SERVICES)
 
   const socials = [
@@ -39,7 +40,7 @@ export default function Footer() {
     { url: get('youtube_url'),             label: '▶️', hover: 'hover:bg-[#FF0000]' },
   ].filter((s) => s.url)
 
-  const copyright = get('copyright', '© {year} Medex65 SARL. Tous droits réservés.')
+  const copyright = get('copyright', '© {year} Ferme Divinform. Tous droits réservés.')
     .replace('{year}', new Date().getFullYear())
 
   return (
@@ -53,12 +54,12 @@ export default function Footer() {
                               flex items-center justify-center text-base overflow-hidden">
                 {logoImg
                   ? <img src={logoImg} alt={siteName} className="w-full h-full object-cover" />
-                  : get('logo_emoji', '🫀')}
+                  : get('logo_emoji', '🌾')}
               </div>
               <span className="font-display font-bold text-white text-lg">{siteName}</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              {get('footer_about', 'Votre partenaire en technologies médicales de pointe. Équipements certifiés, maintenance rapide, formation incluse.')}
+              {get('footer_about', 'Votre ferme de proximité. Produits fermiers frais, vente directe du producteur, savoir-faire authentique.')}
             </p>
             <div className="flex gap-3 mt-5 flex-wrap">
               {socials.map((s, i) => (

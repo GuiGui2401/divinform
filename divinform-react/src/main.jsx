@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           toastOptions={{
             duration: 3000,
             style: { fontFamily: 'Inter, sans-serif', fontSize: '0.875rem' },
-            success: { iconTheme: { primary: '#27AE60', secondary: '#fff' } },
+            success: { iconTheme: { primary: '#5E9E2E', secondary: '#fff' } },
             error:   { iconTheme: { primary: '#E74C3C', secondary: '#fff' } },
           }}
         />

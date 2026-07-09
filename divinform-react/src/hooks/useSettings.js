@@ -4,7 +4,7 @@ import { selectSettings } from '@/store/slices/settingsSlice'
 /**
  * Accès aux réglages publics du site.
  *   const { get, list } = useSettings()
- *   get('site_name', 'Medex65')          // valeur scalaire avec repli
+ *   get('site_name', 'Ferme Divinform')          // valeur scalaire avec repli
  *   list('stats', DEFAULT_STATS)         // liste (tableau) avec repli
  */
 export function useSettings() {

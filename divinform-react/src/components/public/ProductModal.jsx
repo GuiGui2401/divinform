@@ -49,7 +49,7 @@ export default function ProductModal() {
           <div className="flex-1 pr-4">
             {product.badge && (
               <span className="inline-block text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2"
-                    style={{ backgroundColor: product.badge_color || '#2ECC71' }}>
+                    style={{ backgroundColor: product.badge_color || '#86C34A' }}>
                 {product.badge}
               </span>
             )}

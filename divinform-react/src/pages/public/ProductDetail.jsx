@@ -23,7 +23,7 @@ export default function ProductDetail() {
   if (!product) return null
 
   const images = product.images || []
-  const img    = images[imgIdx] || 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80'
+  const img    = images[imgIdx] || 'https://divinform.com/img/vie3.jpg'
 
   return (
     <div className="min-h-screen pt-20 pb-16 bg-off-white">
@@ -40,7 +40,7 @@ export default function ProductDetail() {
           <div>
             <div className="bg-white rounded-2xl overflow-hidden shadow-card mb-3 aspect-[4/3]">
               <img src={img} alt={product.name} className="w-full h-full object-cover"
-                   onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80' }} />
+                   onError={(e) => { e.target.src = 'https://divinform.com/img/vie3.jpg' }} />
             </div>
             {images.length > 1 && (
               <div className="flex gap-2">
@@ -59,7 +59,7 @@ export default function ProductDetail() {
           <div>
             {product.badge && (
               <span className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mb-3"
-                    style={{ backgroundColor: product.badge_color || '#2ECC71' }}>
+                    style={{ backgroundColor: product.badge_color || '#86C34A' }}>
                 {product.badge}
               </span>
             )}
@@ -96,8 +96,8 @@ export default function ProductDetail() {
                             flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <div className="text-green font-bold text-sm">Garantie {get('guarantee_months', '12')} mois constructeur</div>
-                <div className="text-gray-med text-xs mt-0.5">Installation et formation incluses</div>
+                <div className="text-green font-bold text-sm">Produit fermier garanti frais</div>
+                <div className="text-gray-med text-xs mt-0.5">Vente directe du producteur</div>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ export default function ProductDetail() {
                                                  no-underline flex items-center justify-center gap-2 text-sm">
                   📞 Appeler
                 </a>
-                <a href={mailLink(get('email', 'info@medex237.com'), `Info produit : ${product.name}`)}
+                <a href={mailLink(get('email', 'contact@divinform.com'), `Info produit : ${product.name}`)}
                    className="py-3 bg-off-white hover:bg-gray-100 text-dark font-semibold
                               rounded-xl text-center transition-colors no-underline border border-gray-200
                               flex items-center justify-center gap-2 text-sm">

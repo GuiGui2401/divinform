@@ -5,7 +5,7 @@ import Badge from '../ui/Badge'
 
 export default function ProductCard({ product, index = 0 }) {
   const dispatch = useDispatch()
-  const img = product.images?.[0] || 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80'
+  const img = product.images?.[0] || 'https://divinform.com/img/vie3.jpg'
 
   return (
     <article
@@ -19,7 +19,7 @@ export default function ProductCard({ product, index = 0 }) {
           alt={product.name}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80' }}
+          onError={(e) => { e.target.src = 'https://divinform.com/img/vie3.jpg' }}
         />
         <Badge text={product.badge} color={product.badge_color} />
         {product.category && (

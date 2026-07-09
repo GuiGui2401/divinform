@@ -41,12 +41,12 @@ export default function Navbar() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-light to-blue-light
                               flex items-center justify-center text-lg flex-shrink-0 overflow-hidden">
                 {logoImg
-                  ? <img src={logoImg} alt={get('site_name', 'Medex65')} className="w-full h-full object-cover" />
-                  : get('logo_emoji', '🫀')}
+                  ? <img src={logoImg} alt={get('site_name', 'Ferme Divinform')} className="w-full h-full object-cover" />
+                  : get('logo_emoji', '🌾')}
               </div>
               <div>
-                <span className="font-display font-bold text-white text-lg leading-tight block">{get('site_name', 'Medex65')}</span>
-                <span className="text-white/50 text-[0.6rem] tracking-widest uppercase">{get('tagline', 'Faites confiance au processus')}</span>
+                <span className="font-display font-bold text-white text-lg leading-tight block">{get('site_name', 'Ferme Divinform')}</span>
+                <span className="text-white/50 text-[0.6rem] tracking-widest uppercase">{get('tagline', 'Le bon, le vrai, le fermier')}</span>
               </div>
             </Link>
 

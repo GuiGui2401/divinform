@@ -1,8 +1,8 @@
-# Medex65 — Backend Laravel 11
+# Ferme Divinform — Backend Laravel 12
 
-API REST sécurisée pour MEDEX SARL.
+API REST sécurisée de la **Ferme Divinform** (vente directe de produits fermiers).
 
-**Stack :** Laravel 11 · PHP 8.2 · MySQL 8 · JWT Auth · Intervention Image v3
+**Stack :** Laravel 12 · PHP 8.2 · MySQL · JWT Auth (tymon/jwt-auth) · Intervention Image v3
 
 ---
 
@@ -13,8 +13,8 @@ API REST sécurisée pour MEDEX SARL.
 composer install
 
 # 2. Environnement
-cp .env.example .env
-# → Éditer .env : DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD, FRONTEND_URL
+cp .env.example .env    # ou créer .env à la main
+# → Éditer .env : DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD, FRONTEND_URL, APP_URL
 
 # 3. Clés
 php artisan key:generate
@@ -31,14 +31,19 @@ php artisan storage:link
 php artisan serve --port=8000
 ```
 
+> Le schéma (categories / products / product_specs / settings / users) est générique.
+> Tout le contenu de la ferme vit dans les seeders (`database/seeders/`) et le registre
+> de réglages `config/site_settings.php`. Pour recharger le contenu :
+> `php artisan migrate:fresh --seed`.
+
 ---
 
 ## 🔐 Crédentiels par défaut
 
-| Rôle        | Email                    | Mot de passe |
-|-------------|--------------------------|--------------|
-| Super Admin | admin@medex65.com     | Admin@2025   |
-| Éditeur     | products@medex65.com  | Editor@2025  |
+| Rôle        | Email                  | Mot de passe |
+|-------------|------------------------|--------------|
+| Super Admin | admin@divinform.com    | Admin@2025   |
+| Éditeur     | gestion@divinform.com  | Editor@2025  |
 
 > ⚠️ Changer ces mots de passe en production.
 
@@ -84,13 +89,21 @@ php artisan test --coverage
 
 ---
 
-## 🚀 Production Nginx
+## 🚀 Production (déploiement actuel)
+
+Servi sur **https://admin.divinform.com** (hébergement ISPConfig, nginx + php-fpm 8.2).
+
+- Document root nginx : `.../divinform/divinform-api/public`
+- Base MySQL : `c0divinform`
+- `.env` : `APP_ENV=production`, `APP_URL=https://admin.divinform.com`,
+  `FRONTEND_URL=https://divinform.com` (indispensable pour le CORS),
+  drivers `file`/`sync` (pas de tables sessions/cache/jobs).
 
 ```nginx
 server {
     listen 443 ssl;
-    server_name api.medex65.com;
-    root /var/www/medex65-api/public;
+    server_name admin.divinform.com;
+    root /var/www/.../divinform/divinform-api/public;
     index index.php;
 
     location / { try_files $uri $uri/ /index.php?$query_string; }
@@ -102,6 +115,9 @@ server {
 }
 ```
 
+> ⚠️ App Laravel : `open_basedir` du pool php-fpm doit inclure la **racine de l'app**
+> (au-dessus de `public/`), sinon `vendor/` et `storage/` sont inaccessibles.
+
 ```bash
 # Optimisations production
 php artisan config:cache
@@ -111,4 +127,4 @@ php artisan optimize
 
 ---
 
-**Contact :** info@medex237.com · +237 696 809 909 · Bafoussam, Cameroun
+**Contact :** contact@divinform.com · +237 696 809 909

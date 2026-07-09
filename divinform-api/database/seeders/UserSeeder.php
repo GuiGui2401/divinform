@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::firstOrCreate(
-            ['email' => 'admin@medex65.com'],
+            ['email' => 'admin@divinform.com'],
             [
                 'name'     => 'Administrateur Principal',
                 'password' => Hash::make('Admin@2025'),
@@ -21,9 +21,9 @@ class UserSeeder extends Seeder
         );
 
         User::firstOrCreate(
-            ['email' => 'products@medex65.com'],
+            ['email' => 'gestion@divinform.com'],
             [
-                'name'     => 'Gestionnaire Produits',
+                'name'     => 'Gestionnaire de la Ferme',
                 'password' => Hash::make('Editor@2025'),
                 'role'     => 'editor',
                 'active'   => true,

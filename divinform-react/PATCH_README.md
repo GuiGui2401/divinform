@@ -1,6 +1,6 @@
 # Patch — Connexion Frontend React → Backend Laravel
 
-Ce dossier contient les fichiers à **remplacer** dans le projet `medex65-react/`.
+Ce dossier contient les fichiers à **remplacer** dans le projet `divinform-react/`.
 
 ## Fichiers inclus dans ce patch
 
@@ -27,7 +27,7 @@ src/
 ## Comment appliquer
 
 ```bash
-# Depuis la racine de medex65-react/
+# Depuis la racine de divinform-react/
 cp -r chemin/vers/patch/src/api/*           src/api/
 cp -r chemin/vers/patch/src/store/slices/*  src/store/slices/
 cp -r chemin/vers/patch/src/pages/admin/*   src/pages/admin/
@@ -43,13 +43,13 @@ VITE_WHATSAPP_NUMBER=237696809909
 
 En production :
 ```env
-VITE_API_URL=https://api.medex65.com/api
+VITE_API_URL=https://admin.divinform.com/api
 ```
 
 ## Vérifier que le backend tourne
 
 ```bash
-# Dans medex65-api/
+# Dans divinform-api/
 php artisan serve --port=8000
 
 # Tester un endpoint public
@@ -60,7 +60,7 @@ curl http://localhost:8000/api/v1/categories
 ## Démarrer le frontend
 
 ```bash
-# Dans medex65-react/
+# Dans divinform-react/
 npm run dev
 # → http://localhost:5173
 ```
@@ -68,7 +68,7 @@ npm run dev
 ## Test de connexion admin
 
 1. Ouvrir http://localhost:5173/admin/login
-2. Email : admin@medex65.com
+2. Email : admin@divinform.com
 3. Mot de passe : Admin@2025
 
 ## Notes importantes

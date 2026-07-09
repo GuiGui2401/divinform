@@ -15,7 +15,7 @@ const api = axios.create({
 
 // ── Injecter le token JWT ─────────────────────────────────
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('medex_token')
+  const token = localStorage.getItem('divinform_token')
   if (token) config.headers.Authorization = `Bearer ${token}`
   return config
 })
@@ -25,7 +25,7 @@ api.interceptors.response.use(
   (res) => res,
   (err) => {
     if (err.response?.status === 401) {
-      localStorage.removeItem('medex_token')
+      localStorage.removeItem('divinform_token')
       // Rediriger vers login seulement si on est sur une page admin
       if (window.location.pathname.startsWith('/admin')) {
         window.location.href = '/admin/login'

@@ -200,7 +200,7 @@ export default function Users() {
               </div>
               <div>
                 <label className="form-label">Email *</label>
-                <input className="form-input" type="email" placeholder="email@medex65.com"
+                <input className="form-input" type="email" placeholder="email@divinform.com"
                   {...register('email', { required: 'Email requis' })} />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
               </div>

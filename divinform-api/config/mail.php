@@ -9,5 +9,5 @@ return [
         'failover'  => ['transport' => 'failover', 'mailers' => ['smtp', 'log']],
         'roundrobin'=> ['transport' => 'roundrobin', 'mailers' => ['ses', 'postmark']],
     ],
-    'from'     => ['address' => env('MAIL_FROM_ADDRESS', 'info@medex237.com'), 'name' => env('MAIL_FROM_NAME', 'Medex65')],
+    'from'     => ['address' => env('MAIL_FROM_ADDRESS', 'contact@divinform.com'), 'name' => env('MAIL_FROM_NAME', 'Ferme Divinform')],
 ];

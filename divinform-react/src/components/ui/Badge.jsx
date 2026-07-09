@@ -1,4 +1,4 @@
-export default function Badge({ text, color = '#2ECC71' }) {
+export default function Badge({ text, color = '#86C34A' }) {
   if (!text) return null
   return (
     <span

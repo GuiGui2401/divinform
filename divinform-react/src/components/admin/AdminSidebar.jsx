@@ -5,7 +5,7 @@ const NAV = [
   { label: 'Vue d\'ensemble', to: '/admin/dashboard',     icon: '📊' },
   { section: 'Catalogue' },
   { label: 'Catégories',      to: '/admin/categories',    icon: '🗂️' },
-  { label: 'Produits',        to: '/admin/produits',      icon: '🏥' },
+  { label: 'Produits',        to: '/admin/produits',      icon: '🧺' },
   { section: 'Paramètres' },
   { label: 'Informations site', to: '/admin/parametres',  icon: '⚙️' },
   { label: 'Utilisateurs',    to: '/admin/utilisateurs',  icon: '👥' },
@@ -25,9 +25,9 @@ export default function AdminSidebar({ open, onClose, onLogout }) {
         {/* Logo */}
         <div className="px-6 py-5 border-b border-white/8 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="text-2xl">🫀</span>
+            <span className="text-2xl">🌾</span>
             <div>
-              <div className="text-white font-display font-bold text-base">Medex65</div>
+              <div className="text-white font-display font-bold text-base">Ferme Divinform</div>
               <div className="text-white/35 text-xs">Dashboard Admin</div>
             </div>
           </div>

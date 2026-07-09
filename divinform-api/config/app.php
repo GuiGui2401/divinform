@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => env('APP_NAME', 'Medex65'),
+    'name' => env('APP_NAME', 'Ferme Divinform'),
 
     'env' => env('APP_ENV', 'production'),
 

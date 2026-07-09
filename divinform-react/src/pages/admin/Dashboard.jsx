@@ -37,9 +37,9 @@ export default function Dashboard() {
   }, [dispatch])
 
   const statCards = [
-    { label: 'Produits actifs',   icon: '🏥', value: stats?.products_count  ?? products.length,    bg: 'rgba(10,61,143,0.08)',  trend: '↑ +2 ce mois' },
+    { label: 'Produits actifs',   icon: '🧺', value: stats?.products_count  ?? products.length,    bg: 'rgba(46,90,31,0.08)',  trend: '↑ +2 ce mois' },
     { label: 'Catégories',        icon: '🗂️', value: stats?.categories_count ?? categories.length,  bg: 'rgba(39,174,96,0.08)',  trend: 'Stable' },
-    { label: 'Vues ce mois',      icon: '👁️', value: stats?.views_total      ?? '—',                bg: 'rgba(26,111,196,0.08)', trend: '↑ +18%' },
+    { label: 'Vues ce mois',      icon: '👁️', value: stats?.views_total      ?? '—',                bg: 'rgba(74,124,47,0.08)', trend: '↑ +18%' },
     { label: 'Contacts WhatsApp', icon: '💬', value: stats?.contacts_total   ?? '—',                bg: 'rgba(231,76,60,0.08)',  trend: '↑ +8 cette sem.' },
   ]
 

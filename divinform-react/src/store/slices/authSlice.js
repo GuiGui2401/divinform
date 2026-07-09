@@ -7,7 +7,7 @@ export const login = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const res = await authAPI.login(credentials)
-      localStorage.setItem('medex_token', res.data.access_token)
+      localStorage.setItem('divinform_token', res.data.access_token)
       return res.data
     } catch (err) {
       return rejectWithValue(
@@ -23,7 +23,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
   } catch (_) {
     // on ignore les erreurs réseau lors du logout
   } finally {
-    localStorage.removeItem('medex_token')
+    localStorage.removeItem('divinform_token')
   }
 })
 
@@ -34,7 +34,7 @@ export const fetchMe = createAsyncThunk(
       const res = await authAPI.me()
       return res.data.data
     } catch (err) {
-      localStorage.removeItem('medex_token')
+      localStorage.removeItem('divinform_token')
       return rejectWithValue(err.response?.data?.message || 'Session expirée')
     }
   }
@@ -45,7 +45,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user:    null,
-    token:   localStorage.getItem('medex_token') || null,
+    token:   localStorage.getItem('divinform_token') || null,
     loading: false,
     error:   null,
   },

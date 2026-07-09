@@ -11,19 +11,19 @@ import { useSettings } from '@/hooks/useSettings'
 import { useState } from 'react'
 
 const DEFAULT_STATS = [
-  { num: '120+', label: 'Produits certifiés' },
-  { num: '85+',  label: 'Hôpitaux équipés' },
+  { num: '120+', label: 'Produits fermiers' },
+  { num: '85+',  label: 'Clients fidèles' },
   { num: '10 ans', label: 'D\'expérience' },
-  { num: '24/7', label: 'Support technique' },
+  { num: '7/7', label: 'Ferme ouverte' },
 ]
 
 const DEFAULT_WHY = [
-  { icon: '🏆', title: 'Technologies de pointe',       desc: 'Équipements de dernière génération conformes aux normes internationales les plus strictes.' },
-  { icon: '🔒', title: 'Sécurité et conformité',       desc: 'Tous nos produits sont certifiés et répondent aux exigences réglementaires médicales.' },
-  { icon: '🛠️', title: 'Maintenance rapide',           desc: 'Service après-vente réactif avec des techniciens qualifiés disponibles 24h/7j.' },
-  { icon: '🎓', title: 'Formation incluse',             desc: 'Formation complète du personnel soignant et technique lors de chaque installation.' },
-  { icon: '🚚', title: 'Livraison partout',             desc: 'Livraison et installation sur site dans toutes les régions du Cameroun et d\'Afrique Centrale.' },
-  { icon: '🤝', title: 'Accompagnement personnalisé',  desc: 'Conseil expert adapté à vos besoins spécifiques et à votre budget.' },
+  { icon: '🌿', title: 'Produits 100% naturels',       desc: 'Des produits fermiers sans additifs, cultivés et élevés dans le respect de la nature.' },
+  { icon: '🐄', title: 'Bien-être animal',             desc: 'Nos animaux sont élevés en plein air, nourris sainement et traités avec soin.' },
+  { icon: '🤝', title: 'Vente directe',                desc: 'Du producteur au consommateur, sans intermédiaire, pour un prix juste et des produits frais.' },
+  { icon: '🥛', title: 'Fraîcheur garantie',           desc: 'Des produits récoltés et préparés chaque jour pour une fraîcheur incomparable.' },
+  { icon: '🚚', title: 'Livraison locale',             desc: 'Livraison de vos paniers et colis fermiers dans toute la région.' },
+  { icon: '💚', title: 'Savoir-faire authentique',    desc: 'Un savoir-faire fermier transmis avec passion, adapté à vos envies gourmandes.' },
 ]
 
 export default function Home() {
@@ -37,13 +37,13 @@ export default function Home() {
   const stats    = list('stats', DEFAULT_STATS)
   const why      = list('why_items', DEFAULT_WHY)
   const months   = get('guarantee_months', '12')
-  const heroImg  = get('hero_image_url', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80')
-  const email    = get('email', 'info@medex237.com')
+  const heroImg  = get('hero_image_url', 'https://divinform.com/img/vie3.jpg')
+  const email    = get('email', 'contact@divinform.com')
 
   const contactCards = [
-    { icon: '📞', main: get('phone1', '+237 696 809 909'), sub: get('phone2', '+237 696 534 179'), bg: 'rgba(10,61,143,0.06)' },
+    { icon: '📞', main: get('phone1', '+237 696 809 909'), sub: get('phone2', '+237 696 534 179'), bg: 'rgba(46,90,31,0.06)' },
     { icon: '💬', main: 'WhatsApp disponible', sub: 'Réponse sous 1h en journée', bg: 'rgba(39,174,96,0.06)' },
-    { icon: '📧', main: email, sub: get('website', 'www.medex237.com'), bg: 'rgba(26,111,196,0.06)' },
+    { icon: '📧', main: email, sub: get('website', 'www.divinform.com'), bg: 'rgba(74,124,47,0.06)' },
     { icon: '📍', main: get('address', 'Cameroun — Bafoussam'), sub: get('address_detail', 'Quartier Haoussa'), bg: 'rgba(231,76,60,0.06)' },
   ]
 
@@ -63,12 +63,12 @@ export default function Home() {
         id="hero"
         className="min-h-screen flex items-center pt-16 relative overflow-hidden"
         style={{
-          background: `linear-gradient(135deg, rgba(10,61,143,0.95) 0%, rgba(13,27,42,0.92) 60%, rgba(10,61,143,0.85) 100%), url(${heroImg}) center/cover no-repeat`,
+          background: `linear-gradient(135deg, rgba(46,90,31,0.95) 0%, rgba(43,36,22,0.92) 60%, rgba(46,90,31,0.85) 100%), url(${heroImg}) center/cover no-repeat`,
         }}
       >
         {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none"
-             style={{ background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,111,196,0.25) 0%, transparent 60%)' }} />
+             style={{ background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(74,124,47,0.25) 0%, transparent 60%)' }} />
 
         <div className="max-w-6xl mx-auto px-6 py-20 relative z-10 grid md:grid-cols-[1fr_auto] gap-12 items-center">
           <div className="max-w-2xl animate-fade-in">
@@ -77,21 +77,21 @@ export default function Home() {
                             text-green-light px-4 py-1.5 rounded-full text-xs font-bold
                             tracking-widest uppercase mb-6">
               <span className="w-1.5 h-1.5 bg-green-light rounded-full animate-pulse-dot" />
-              {get('hero_eyebrow', 'Équipements médicaux certifiés')}
+              {get('hero_eyebrow', 'Produits fermiers en vente directe')}
             </div>
 
             <h1 className="font-display text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-5">
-              {get('hero_title', 'Équipements')}{' '}
-              <em className="not-italic text-green-light">{get('hero_highlight', 'Innovants')}</em><br />
-              {get('hero_title_suffix', 'pour un Diagnostic de Précision')}
+              {get('hero_title', 'Produits')}{' '}
+              <em className="not-italic text-green-light">{get('hero_highlight', 'Fermiers')}</em><br />
+              {get('hero_title_suffix', 'du Producteur à votre Table')}
             </h1>
             <p className="text-white/70 text-base md:text-lg leading-relaxed mb-9 max-w-xl">
-              {get('hero_subtitle', "MEDEX SARL vous propose des équipements médicaux fiables et performants pour l'imagerie médicale et le laboratoire, pour une meilleure prise en charge des patients.")}
+              {get('hero_subtitle', "La Ferme Divinform vous propose des produits fermiers frais et savoureux, issus d'un élevage et d'une culture respectueux de la nature, en vente directe pour régaler toute la famille.")}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-14">
               <button onClick={() => scrollTo('produits')} className="btn-primary text-base px-8 py-3.5">
-                {get('hero_cta_primary', '🔬 Voir nos équipements')}
+                {get('hero_cta_primary', '🧺 Voir nos produits')}
               </button>
               <button onClick={() => scrollTo('contact')} className="btn-outline text-base px-8 py-3.5">
                 {get('hero_cta_secondary', '📞 Nous contacter')}
@@ -118,9 +118,9 @@ export default function Home() {
               <span className="font-display font-black text-2xl text-green-light leading-none">{months}</span>
               <span className="text-green-light text-[0.55rem] font-bold tracking-wider">MOIS</span>
             </div>
-            <div className="font-display font-bold text-center text-sm mb-5">GARANTIE CONSTRUCTEUR</div>
+            <div className="font-display font-bold text-center text-sm mb-5">FRAÎCHEUR FERMIÈRE</div>
             <div className="space-y-2.5 text-sm text-white/75">
-              {['✅ Produits certifiés', '⚡ Maintenance rapide', '🎓 Formation incluse', '🚚 Livraison partout'].map(s => (
+              {['✅ Produits fermiers', '🌿 100% naturel', '🐄 Bien-être animal', '🚚 Livraison locale'].map(s => (
                 <div key={s}>{s}</div>
               ))}
             </div>
@@ -136,9 +136,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="section-eyebrow">{get('categories_eyebrow', 'Nos domaines')}</span>
-            <h2 className="section-title">{get('categories_title', "Nos gammes d'équipements")}</h2>
+            <h2 className="section-title">{get('categories_title', "Nos gammes de produits")}</h2>
             <p className="text-gray-med max-w-xl mx-auto">
-              {get('categories_subtitle', "De l'imagerie médicale de pointe au mobilier hospitalier certifié, découvrez notre catalogue complet.")}
+              {get('categories_subtitle', "Des produits laitiers aux viandes fermières en passant par les œufs plein air, découvrez tout ce que la ferme a à offrir.")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -162,10 +162,10 @@ export default function Home() {
               <h2 className="font-display font-bold text-dark text-2xl">
                 {activeCat
                   ? categories.find((c) => c.id === activeCat)?.name
-                  : 'Tous nos équipements'}
+                  : 'Tous nos produits'}
               </h2>
               <p className="text-gray-med text-sm mt-1">
-                {products.length} équipement{products.length > 1 ? 's' : ''}
+                {products.length} produit{products.length > 1 ? 's' : ''}
               </p>
             </div>
             {activeCat && (
@@ -199,17 +199,17 @@ export default function Home() {
 
       {/* ── WHY US ──────────────────────────────────── */}
       <section id="pourquoi" className="py-20"
-               style={{ background: 'linear-gradient(135deg, #0A3D8F 0%, #1C2E3E 100%)' }}>
+               style={{ background: 'linear-gradient(135deg, #2E5A1F 0%, #3E3520 100%)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="text-green-light text-xs font-bold tracking-widest uppercase block mb-3">
               {get('why_eyebrow', 'Nos engagements')}
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-              {get('why_title', 'Pourquoi choisir Medex65 ?')}
+              {get('why_title', 'Pourquoi choisir la Ferme Divinform ?')}
             </h2>
             <p className="text-white/60 max-w-xl mx-auto">
-              {get('why_subtitle', 'Des équipements de qualité supérieure avec un accompagnement complet à chaque étape.')}
+              {get('why_subtitle', 'Des produits fermiers de qualité supérieure avec un savoir-faire authentique à chaque étape.')}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -233,9 +233,9 @@ export default function Home() {
           {/* Info */}
           <div>
             <span className="section-eyebrow">{get('contact_eyebrow', 'Contactez-nous')}</span>
-            <h2 className="section-title">{get('contact_title', 'Parlons de vos besoins médicaux')}</h2>
+            <h2 className="section-title">{get('contact_title', 'Parlons de vos envies gourmandes')}</h2>
             <p className="text-gray-med mb-8 leading-relaxed">
-              {get('contact_subtitle', "Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans votre projet d'acquisition.")}
+              {get('contact_subtitle', "Notre équipe est disponible pour répondre à toutes vos questions et préparer vos paniers de produits fermiers.")}
             </p>
             <div className="space-y-3">
               {contactCards.map((c, i) => (
@@ -255,17 +255,17 @@ export default function Home() {
 
           {/* CTA box */}
           <div className="rounded-3xl p-10 text-white text-center"
-               style={{ background: 'linear-gradient(135deg, #0A3D8F, #1A6FC4)' }}>
+               style={{ background: 'linear-gradient(135deg, #2E5A1F, #4A7C2F)' }}>
             <div className="w-20 h-20 rounded-full border-[3px] border-white/40 flex flex-col
                             items-center justify-center mx-auto mb-5">
               <span className="font-display font-black text-2xl text-white/80 leading-none">{months}</span>
               <span className="text-white/80 text-[0.55rem] font-bold tracking-wider">MOIS</span>
             </div>
             <h3 className="font-display font-bold text-xl mb-3">
-              {get('cta_box_title', 'Prêt à équiper votre structure médicale ?')}
+              {get('cta_box_title', 'Envie de goûter à la ferme ?')}
             </h3>
             <p className="text-white/70 text-sm mb-7">
-              {get('cta_box_subtitle', 'Contactez-nous dès maintenant pour un devis personnalisé et gratuit.')}
+              {get('cta_box_subtitle', 'Contactez-nous dès maintenant pour commander vos produits fermiers.')}
             </p>
             <div className="flex flex-col gap-3">
               <a href={waLink()} target="_blank" rel="noopener"

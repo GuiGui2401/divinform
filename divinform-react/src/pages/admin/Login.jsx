@@ -19,19 +19,19 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6"
-         style={{ background: 'linear-gradient(135deg, #0A3D8F 0%, #0D1B2A 100%)' }}>
+         style={{ background: 'linear-gradient(135deg, #2E5A1F 0%, #2B2416 100%)' }}>
       <div className="bg-white rounded-3xl p-10 w-full max-w-md shadow-lg-blue">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-blue-dark to-blue-light
                           flex items-center justify-center text-3xl mb-4">⚙️</div>
           <h1 className="font-display font-extrabold text-dark text-2xl">Administration</h1>
-          <p className="text-gray-med text-sm mt-1">Accès réservé aux administrateurs Medex65</p>
+          <p className="text-gray-med text-sm mt-1">Accès réservé aux administrateurs de la Ferme Divinform</p>
         </div>
 
         {/* Credentials hint */}
         <div className="bg-blue-dark/6 border border-blue-mid/20 rounded-xl p-3 mb-6 text-xs text-gray-med">
-          <strong className="text-dark">Démo :</strong> admin@medex65.com / Admin@2025
+          <strong className="text-dark">Démo :</strong> admin@divinform.com / Admin@2025
         </div>
 
         {/* Error */}
@@ -47,7 +47,7 @@ export default function Login() {
             <input
               type="email"
               className="form-input"
-              placeholder="admin@medex65.com"
+              placeholder="admin@divinform.com"
               {...register('email', { required: 'Email requis' })}
               onChange={() => error && clearError()}
             />

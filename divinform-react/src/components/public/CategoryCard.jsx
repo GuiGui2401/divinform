@@ -30,7 +30,7 @@ export default function CategoryCard({ category, active, onClick }) {
         {category.description}
       </p>
       <span className="text-sm font-semibold" style={{ color: category.color }}>
-        → {category.products_count || 0} équipement{(category.products_count || 0) > 1 ? 's' : ''}
+        → {category.products_count || 0} produit{(category.products_count || 0) > 1 ? 's' : ''}
       </span>
     </div>
   )

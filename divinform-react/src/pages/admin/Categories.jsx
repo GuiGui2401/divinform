@@ -106,12 +106,12 @@ export default function Categories() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="form-label">Nom de la catégorie *</label>
-                <input className="form-input" placeholder="Ex: Imagerie Médicale"
+                <input className="form-input" placeholder="Ex: Produits Laitiers"
                   {...register('name', { required: true })} />
               </div>
               <div>
                 <label className="form-label">Icône (emoji)</label>
-                <input className="form-input" placeholder="🏥"
+                <input className="form-input" placeholder="🥛"
                   {...register('icon')} />
               </div>
               <div className="md:col-span-2">

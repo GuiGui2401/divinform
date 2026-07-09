@@ -160,7 +160,7 @@ export default function Products() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="form-label">Nom du produit *</label>
-                <input className="form-input" placeholder="Ex: Scanner IRM 1.5T"
+                <input className="form-input" placeholder="Ex: Lait Cru Fermier"
                   {...register('name', { required: 'Nom requis' })} />
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
               </div>

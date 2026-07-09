@@ -1,8 +1,8 @@
-# Medex65 — Frontend React
+# Ferme Divinform — Frontend React
 
-Application web vitrine + dashboard admin pour MEDEX SARL.
+Site vitrine + dashboard d'administration de la **Ferme Divinform** (vente directe de produits fermiers).
 
-**Stack :** React 18 · Vite · Redux Toolkit · React Router v6 · Tailwind CSS · React Hook Form
+**Stack :** React 18 · Vite · Redux Toolkit · React Router v6 · Tailwind CSS · React Hook Form · Axios
 
 ---
 
@@ -12,95 +12,82 @@ Application web vitrine + dashboard admin pour MEDEX SARL.
 # 1. Installer les dépendances
 npm install
 
-# 2. Copier le fichier d'environnement
-cp .env.example .env.local
+# 2. Configurer l'API (développement)
+cp .env.example .env.local     # ou créer .env.local
+#   VITE_API_URL=http://localhost:8000/api
+#   VITE_WHATSAPP_NUMBER=237696809909
 
 # 3. Lancer en développement
 npm run dev
 # → http://localhost:5173
 ```
 
-## 🔐 Accès admin (mode démo)
+Le frontend consomme le backend Laravel (`divinform-api`). En dev, Vite proxifie `/api`
+vers `http://localhost:8000` (voir `vite.config.js`) ; en prod, l'URL vient de `VITE_API_URL`.
 
-| Champ    | Valeur                   |
-|----------|--------------------------|
-| URL      | http://localhost:5173/admin/login |
-| Email    | admin@medex65.com     |
-| Password | Admin@2025               |
+## 🔐 Accès admin
 
-> En mode démo, l'app utilise des données mock locales.
-> Pour connecter le vrai backend Laravel, remplace les `fakeFetch` dans les slices Redux par les appels `productsAPI` / `categoriesAPI` depuis `src/api/`.
+| Champ    | Valeur                              |
+|----------|-------------------------------------|
+| URL      | `/admin/login`                      |
+| Email    | admin@divinform.com                 |
+| Password | Admin@2025                          |
+
+> L'application est **branchée sur l'API réelle** (les slices Redux appellent le backend
+> via `src/api/`). Le jeton JWT est stocké dans `localStorage['divinform_token']`.
+> `src/utils/mockData.js` n'est plus utilisé au runtime (données de référence uniquement).
 
 ---
+
+## 🎨 Thème
+
+Palette « ferme » — vert prairie & terre — définie dans `tailwind.config.js`
+(les clés `blue-*` conservent leur nom mais portent des valeurs vertes) et dans
+`src/index.css`. Les images de la ferme sont dans `public/img/` et servies à la racine
+du site (`/img/*.jpg`).
 
 ## 📁 Structure
 
 ```
 src/
-├── api/              # Instances Axios + endpoints
-│   ├── axios.js      # Intercepteurs JWT
-│   ├── auth.js
-│   ├── products.js
-│   ├── categories.js
-│   └── settings.js
+├── api/              # Axios + endpoints (auth, products, categories, settings, media)
+│   └── axios.js      # Intercepteurs JWT (divinform_token)
 ├── components/
 │   ├── layout/       # PublicLayout, AdminLayout, Navbar, Footer, ProtectedRoute
 │   ├── public/       # ProductCard, CategoryCard, ProductModal, SearchBar, WhatsAppFAB
-│   ├── admin/        # AdminSidebar
+│   ├── admin/        # AdminSidebar, ImageUploader
 │   └── ui/           # Spinner, Badge, Modal
-├── hooks/
-│   ├── useAuth.js
-│   └── useProducts.js
+├── hooks/            # useAuth, useProducts, useSettings
 ├── pages/
 │   ├── public/       # Home, ProductDetail, CategoryPage
 │   └── admin/        # Login, Dashboard, Products, Categories, Settings, Users
 ├── store/
 │   ├── index.js
-│   └── slices/       # authSlice, productsSlice, categoriesSlice, uiSlice
-└── utils/
-    ├── contact.js    # waLink, callLink, mailLink
-    └── mockData.js   # Données de démonstration
+│   └── slices/       # authSlice, productsSlice, categoriesSlice, settingsSlice, uiSlice
+└── utils/            # contact.js, settingsStore.js, mockData.js (référence)
 ```
 
 ---
 
-## 🔌 Connexion au backend Laravel
-
-Dans chaque slice Redux, remplace le bloc `fakeFetch` par l'appel API réel :
-
-```js
-// Avant (mock)
-export const fetchProducts = createAsyncThunk('products/fetchAll', async (params) => {
-  await fakeFetch()
-  return { data: MOCK_PRODUCTS, ... }
-})
-
-// Après (API réelle)
-import { productsAPI } from '@/api/products'
-export const fetchProducts = createAsyncThunk('products/fetchAll', async (params, { rejectWithValue }) => {
-  try {
-    const res = await productsAPI.getAll(params)
-    return res.data
-  } catch (err) {
-    return rejectWithValue(err.response?.data?.message)
-  }
-})
-```
-
----
-
-## 🏗️ Build de production
+## 🏗️ Build & déploiement de production
 
 ```bash
+# .env.production (chargé automatiquement par vite build)
+#   VITE_API_URL=https://admin.divinform.com/api
+#   VITE_WHATSAPP_NUMBER=237696809909
+
 npm run build
-# → dist/ (à déployer sur ton serveur ou CDN)
+# → dist/  (servi par nginx sur https://divinform.com)
 ```
+
+Déploiement actuel : le dossier `dist/` est servi sur **https://divinform.com**
+(hébergement ISPConfig, nginx en mode SPA : `try_files $uri /index.html`).
 
 ---
 
-## 📞 Contact Medex65
+## 📞 Contact — Ferme Divinform
 
 - **Tél :** +237 696 809 909 / +237 696 534 179
-- **Email :** info@medex237.com
+- **Email :** contact@divinform.com
 - **WhatsApp :** +237 696 809 909
-- **Adresse :** Bafoussam, Cameroun — Quartier Haoussa
+- **Web :** www.divinform.com

@@ -1,7 +1,7 @@
 {
-    "name": "medex65/api",
-    "description": "Medex65 — API REST Laravel 12",
-    "keywords": ["laravel", "medex", "api"],
+    "name": "divinform/api",
+    "description": "Ferme Divinform — API REST Laravel 12",
+    "keywords": ["laravel", "ferme", "divinform", "api"],
     "license": "MIT",
     "require": {
         "php": "^8.2",

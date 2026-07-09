@@ -15,7 +15,7 @@ export default function SearchBar() {
           <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300 text-sm">🔍</span>
           <input
             type="text"
-            placeholder="Rechercher un équipement médical…"
+            placeholder="Rechercher un produit de la ferme…"
             value={filters.search}
             onChange={(e) => dispatch(setFilter({ search: e.target.value }))}
             className="form-input pl-10"

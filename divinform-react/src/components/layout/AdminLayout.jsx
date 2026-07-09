@@ -44,7 +44,7 @@ export default function AdminLayout() {
                             text-white font-bold text-sm">AD</div>
             <div className="hidden md:block">
               <div className="text-sm font-semibold text-dark">Administrateur</div>
-              <div className="text-xs text-gray-med">admin@medex65.com</div>
+              <div className="text-xs text-gray-med">admin@divinform.com</div>
             </div>
           </div>
         </header>
