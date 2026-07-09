@@ -45,6 +45,21 @@ class Product extends Model
         return $this->hasMany(ProductSpec::class)->orderBy('sort_order');
     }
 
+    public function batches()
+    {
+        return $this->hasMany(FarmBatch::class);
+    }
+
+    /**
+     * Bandes prêtes à la vente. Le stock vendable d'un produit est la somme de
+     * leurs effectifs : la ferme reste l'unique source de vérité, aucune
+     * colonne `stock` à tenir synchronisée sur le catalogue.
+     */
+    public function availableBatches()
+    {
+        return $this->hasMany(FarmBatch::class)->where('status', 'disponible');
+    }
+
     // ── Auto-slug ─────────────────────────────────────
     protected static function boot()
     {

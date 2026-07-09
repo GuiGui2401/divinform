@@ -26,12 +26,7 @@ export default function Login() {
           <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-blue-dark to-blue-light
                           flex items-center justify-center text-3xl mb-4">⚙️</div>
           <h1 className="font-display font-extrabold text-dark text-2xl">Administration</h1>
-          <p className="text-gray-med text-sm mt-1">Accès réservé aux administrateurs de la Ferme Divinform</p>
-        </div>
-
-        {/* Credentials hint */}
-        <div className="bg-blue-dark/6 border border-blue-mid/20 rounded-xl p-3 mb-6 text-xs text-gray-med">
-          <strong className="text-dark">Démo :</strong> admin@divinform.com / Admin@2025
+          <p className="text-gray-med text-sm mt-1">Accès réservé au personnel du C.F Divin Élevage</p>
         </div>
 
         {/* Error */}

@@ -81,5 +81,6 @@ export default authSlice.reducer
 export const selectAuth    = (s) => s.auth
 export const selectIsAdmin = (s) => !!s.auth.token
 export const selectUser    = (s) => s.auth.user
+export const selectRole    = (s) => s.auth.user?.role || null
 export const selectAuthLoading = (s) => s.auth.loading
 export const selectAuthError   = (s) => s.auth.error

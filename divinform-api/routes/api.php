@@ -16,6 +16,13 @@ use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminStatsController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\Farm\FarmAnimalController;
+use App\Http\Controllers\Admin\Farm\FarmBatchController;
+use App\Http\Controllers\Admin\Farm\FarmDashboardController;
+use App\Http\Controllers\Admin\Farm\FarmUnitController;
+use App\Http\Controllers\Admin\Farm\FeedItemController;
+use App\Http\Controllers\Admin\Farm\FeedMovementController;
+use App\Http\Controllers\Admin\Farm\HealthEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,4 +102,33 @@ Route::prefix('admin')->middleware(['auth.jwt', 'role:super_admin,editor'])->gro
         // Utilisateurs
         Route::apiResource('users', AdminUserController::class);
     });
+});
+
+// ── Gestion de l'exploitation (super_admin + fermier) ───────────────────
+// Le personnel d'élevage saisit ici sans accéder au contenu du site.
+Route::prefix('admin/farm')->middleware(['auth.jwt', 'role:super_admin,farm_manager'])->group(function () {
+
+    Route::get('dashboard', [FarmDashboardController::class, 'index']);
+
+    // `parameters()` est indispensable : sans lui, apiResource nomme le
+    // paramètre {unit}/{batch}/{animal}, qui ne correspond pas aux arguments
+    // typés $farmUnit/$farmBatch/$farmAnimal — la liaison de modèle échouerait.
+    Route::apiResource('units',   FarmUnitController::class)
+         ->parameters(['units' => 'farmUnit'])->except(['show']);
+    Route::apiResource('batches', FarmBatchController::class)
+         ->parameters(['batches' => 'farmBatch']);
+    Route::apiResource('animals', FarmAnimalController::class)
+         ->parameters(['animals' => 'farmAnimal'])->except(['show']);
+
+    // Aliments & stocks
+    Route::apiResource('feed-items', FeedItemController::class)
+         ->parameters(['feed-items' => 'feedItem'])->except(['show']);
+    Route::get('feed-movements',            [FeedMovementController::class, 'index']);
+    Route::post('feed-movements',           [FeedMovementController::class, 'store']);
+    Route::delete('feed-movements/{feedMovement}', [FeedMovementController::class, 'destroy']);
+
+    // Suivi vétérinaire
+    Route::get('health-events',    [HealthEventController::class, 'index']);
+    Route::post('health-events',   [HealthEventController::class, 'store']);
+    Route::delete('health-events/{healthEvent}', [HealthEventController::class, 'destroy']);
 });

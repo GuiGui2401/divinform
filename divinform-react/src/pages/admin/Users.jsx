@@ -5,9 +5,10 @@ import Spinner from '@/components/ui/Spinner'
 import toast from 'react-hot-toast'
 
 const ROLE_LABELS = {
-  super_admin: { label: 'Super Admin', cls: 'bg-blue-dark/10 text-blue-dark' },
-  editor:      { label: 'Éditeur',     cls: 'bg-green/10 text-green' },
-  viewer:      { label: 'Lecteur',     cls: 'bg-gray-100 text-gray-med' },
+  super_admin:  { label: 'Super Admin', cls: 'bg-blue-dark/10 text-blue-dark' },
+  editor:       { label: 'Éditeur',     cls: 'bg-green/10 text-green' },
+  farm_manager: { label: 'Fermier',     cls: 'bg-amber-50 text-amber-800' },
+  viewer:       { label: 'Lecteur',     cls: 'bg-gray-100 text-gray-med' },
 }
 
 export default function Users() {
@@ -143,7 +144,7 @@ export default function Users() {
         </table>
       </div>
 
-      {/* Matrice des permissions */}
+      {/* Matrice des permissions — reflète les middlewares de routes/api.php */}
       <div className="admin-card mt-5">
         <div className="p-6 border-b border-gray-100">
           <h2 className="font-display font-bold text-dark">Matrice des permissions</h2>
@@ -153,23 +154,23 @@ export default function Users() {
             <thead className="bg-off-white">
               <tr>
                 <th className="text-left px-5 py-3 text-xs font-bold text-gray-med uppercase tracking-wider">Action</th>
-                {['Super Admin', 'Éditeur', 'Lecteur'].map((r) => (
+                {['Super Admin', 'Éditeur', 'Fermier', 'Lecteur'].map((r) => (
                   <th key={r} className="text-center px-5 py-3 text-xs font-bold text-gray-med uppercase tracking-wider">{r}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {[
-                ['Voir les produits',         true,  true,  true],
-                ['Créer / modifier produits', true,  true,  false],
-                ['Supprimer produits',        true,  false, false],
-                ['Gérer les catégories',      true,  false, false],
-                ['Modifier les paramètres',   true,  false, false],
-                ['Gérer les utilisateurs',    true,  false, false],
-              ].map(([action, sa, ed, vi]) => (
+                ["Tableau de bord du site",          true, true,  false, false],
+                ['Gérer formations & inscriptions',  true, true,  false, false],
+                ['Gérer produits & catégories',      true, true,  false, false],
+                ["Gérer l'exploitation (ferme)",     true, false, true,  false],
+                ['Modifier les paramètres du site',  true, false, false, false],
+                ['Gérer les utilisateurs',           true, false, false, false],
+              ].map(([action, sa, ed, fm, vi]) => (
                 <tr key={action} className="border-t border-gray-100">
                   <td className="px-5 py-3 text-sm text-dark">{action}</td>
-                  {[sa, ed, vi].map((v, i) => (
+                  {[sa, ed, fm, vi].map((v, i) => (
                     <td key={i} className="px-5 py-3 text-center text-base">
                       {v ? <span className="text-green font-bold">✓</span>
                          : <span className="text-gray-300">—</span>}
@@ -180,6 +181,10 @@ export default function Users() {
             </tbody>
           </table>
         </div>
+        <p className="px-6 pb-5 text-xs text-gray-med">
+          Le rôle « Lecteur » n'ouvre aujourd'hui aucun accès à l'API d'administration :
+          un compte Lecteur peut se connecter mais toutes les pages renverront « Accès refusé ».
+        </p>
       </div>
 
       {/* Formulaire */}
@@ -207,7 +212,8 @@ export default function Users() {
               <div>
                 <label className="form-label">Rôle</label>
                 <select className="form-input" {...register('role')}>
-                  <option value="editor">Éditeur</option>
+                  <option value="editor">Éditeur — contenu du site</option>
+                  <option value="farm_manager">Fermier — gestion de l'exploitation</option>
                   <option value="viewer">Lecteur</option>
                   <option value="super_admin">Super Admin</option>
                 </select>

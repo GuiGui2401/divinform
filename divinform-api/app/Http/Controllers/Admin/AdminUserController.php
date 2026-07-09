@@ -26,7 +26,7 @@ class AdminUserController extends Controller
             'name'     => 'required|string|max:100',
             'email'    => 'required|email|unique:users,email',
             'password' => ['required', Password::min(8)->mixedCase()->numbers()],
-            'role'     => 'required|in:super_admin,editor,viewer',
+            'role'     => 'required|in:super_admin,editor,viewer,farm_manager',
         ]);
 
         $user = User::create([
@@ -59,7 +59,7 @@ class AdminUserController extends Controller
             'name'     => 'sometimes|string|max:100',
             'email'    => "sometimes|email|unique:users,email,{$user->id}",
             'password' => ['sometimes', Password::min(8)->mixedCase()->numbers()],
-            'role'     => 'sometimes|in:super_admin,editor,viewer',
+            'role'     => 'sometimes|in:super_admin,editor,viewer,farm_manager',
             'active'   => 'sometimes|boolean',
         ]);
 

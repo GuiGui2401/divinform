@@ -28,7 +28,12 @@ class User extends Authenticatable implements JWTSubject
     ];
 
     // ── Rôles disponibles ─────────────────────────────
-    const ROLES = ['super_admin', 'editor', 'viewer'];
+    const ROLES = ['super_admin', 'editor', 'viewer', 'farm_manager'];
+
+    public function isFarmManager(): bool
+    {
+        return $this->role === 'farm_manager';
+    }
 
     public function isSuperAdmin(): bool
     {

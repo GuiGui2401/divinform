@@ -1,20 +1,39 @@
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectRole } from '@/store/slices/authSlice'
 
+// `roles` liste les rôles autorisés à voir l'entrée. Une entrée sans `roles`
+// est visible de tous. Le back-office reste protégé par l'API : ce filtrage
+// évite surtout d'offrir des liens qui répondraient 403.
 const NAV = [
-  { section: 'Principal' },
-  { label: 'Vue d\'ensemble',  to: '/admin/dashboard',    icon: '📊' },
-  { section: 'Centre de formation' },
-  { label: 'Formations',       to: '/admin/formations',   icon: '🎓' },
-  { label: 'Inscriptions',     to: '/admin/inscriptions', icon: '📝' },
-  { section: 'La ferme' },
-  { label: 'Catégories',       to: '/admin/categories',   icon: '🗂️' },
-  { label: 'Produits',         to: '/admin/produits',     icon: '🧺' },
-  { section: 'Paramètres' },
-  { label: 'Informations site', to: '/admin/parametres',  icon: '⚙️' },
-  { label: 'Utilisateurs',     to: '/admin/utilisateurs', icon: '👥' },
+  { section: 'Principal', roles: ['super_admin', 'editor', 'viewer'] },
+  { label: "Vue d'ensemble", to: '/admin/dashboard', icon: '📊', roles: ['super_admin', 'editor', 'viewer'] },
+
+  { section: 'Centre de formation', roles: ['super_admin', 'editor'] },
+  { label: 'Formations',   to: '/admin/formations',   icon: '🎓', roles: ['super_admin', 'editor'] },
+  { label: 'Inscriptions', to: '/admin/inscriptions', icon: '📝', roles: ['super_admin', 'editor'] },
+
+  { section: "Gestion de l'exploitation", roles: ['super_admin', 'farm_manager'] },
+  { label: 'Vue de la ferme',  to: '/admin/ferme',           icon: '🌾', roles: ['super_admin', 'farm_manager'] },
+  { label: 'Ateliers',         to: '/admin/ferme/ateliers',  icon: '🏠', roles: ['super_admin', 'farm_manager'] },
+  { label: 'Bandes',           to: '/admin/ferme/bandes',    icon: '🐔', roles: ['super_admin', 'farm_manager'] },
+  { label: 'Animaux',          to: '/admin/ferme/animaux',   icon: '🐄', roles: ['super_admin', 'farm_manager'] },
+  { label: 'Aliments & stocks',to: '/admin/ferme/aliments',  icon: '🌽', roles: ['super_admin', 'farm_manager'] },
+  { label: 'Suivi vétérinaire',to: '/admin/ferme/sante',     icon: '💉', roles: ['super_admin', 'farm_manager'] },
+
+  { section: 'Vitrine', roles: ['super_admin', 'editor'] },
+  { label: 'Catégories', to: '/admin/categories', icon: '🗂️', roles: ['super_admin', 'editor'] },
+  { label: 'Produits',   to: '/admin/produits',   icon: '🧺', roles: ['super_admin', 'editor'] },
+
+  { section: 'Paramètres', roles: ['super_admin'] },
+  { label: 'Informations site', to: '/admin/parametres',   icon: '⚙️', roles: ['super_admin'] },
+  { label: 'Utilisateurs',      to: '/admin/utilisateurs', icon: '👥', roles: ['super_admin'] },
 ]
 
 export default function AdminSidebar({ open, onClose, onLogout }) {
+  const role = useSelector(selectRole)
+  const visible = NAV.filter((item) => !item.roles || !role || item.roles.includes(role))
+
   return (
     <>
       {/* Overlay mobile */}
@@ -40,10 +59,10 @@ export default function AdminSidebar({ open, onClose, onLogout }) {
 
         {/* Nav */}
         <nav className="flex-1 py-4 overflow-y-auto">
-          {NAV.map((item, i) => {
+          {visible.map((item, i) => {
             if (item.section) {
               return (
-                <div key={i} className="px-5 py-2 text-[0.65rem] font-bold tracking-widest
+                <div key={`s-${i}`} className="px-5 py-2 text-[0.65rem] font-bold tracking-widest
                                         uppercase text-white/30 mt-2">
                   {item.section}
                 </div>
@@ -53,6 +72,7 @@ export default function AdminSidebar({ open, onClose, onLogout }) {
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.to === '/admin/ferme'}
                 onClick={onClose}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-5 py-2.5 text-sm border-l-[3px] transition-all

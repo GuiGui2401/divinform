@@ -23,6 +23,13 @@ class ProductResource extends JsonResource
             'views_count'   => $this->views_count,
             'contact_count' => $this->contact_count,
             'sort_order'    => $this->sort_order,
+            // Somme des effectifs des bandes « disponible » visant ce produit.
+            // `null` = calcul non demandé (withSum absent) ; `0` = aucune bande
+            // disponible. SUM() renvoyant NULL sur un ensemble vide, on teste la
+            // présence de l'attribut plutôt que sa valeur.
+            'farm_stock'    => array_key_exists('farm_stock', $this->resource->getAttributes())
+                ? (int) $this->farm_stock
+                : null,
             'specs'         => $this->whenLoaded('specs', fn () =>
                 $this->specs->map(fn ($s) => [
                     'label' => $s->label,

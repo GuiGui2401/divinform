@@ -15,9 +15,11 @@ Le site s'articule en deux volets, dans cet ordre :
 - `divinform-api/` : backend API REST Laravel 12 (JWT) — sert `https://admin.divinform.com`
 - `divinform-react/` : frontend React/Vite (vitrine + dashboard) — sert `https://divinform.com`
 
-Deux domaines métier cohabitent dans le schéma :
+Trois domaines métier cohabitent dans le schéma :
 - `formations` → `formation_sessions` → `inscriptions` (le centre de formation)
-- `categories` → `products` → `product_specs` (la ferme)
+- `categories` → `products` → `product_specs` (la vitrine)
+- `farm_units` → `farm_batches` / `farm_animals`, `feed_items` → `feed_movements`,
+  `health_events` (la gestion de l'exploitation)
 
 L'identité du site et tous les textes de la page d'accueil vivent dans :
 - `divinform-api/config/site_settings.php` (registre central des réglages/branding)
@@ -120,6 +122,70 @@ Puis, côté frontend :
 ```bash
 cd divinform-react && npm run build
 ```
+
+## Comptes d'administration
+
+Aucun mot de passe n'est écrit en dur. `UserSeeder` lit `ADMIN_PASSWORD` /
+`EDITOR_PASSWORD` dans l'environnement, ou génère un mot de passe aléatoire affiché
+une seule fois dans la console. Il ne réinitialise jamais un compte existant.
+
+```bash
+ADMIN_PASSWORD='…' EDITOR_PASSWORD='…' php artisan db:seed --class=UserSeeder
+```
+
+Pour créer un compte « fermier » (accès à la gestion de l'exploitation uniquement),
+passer par **Admin → Utilisateurs** et choisir le rôle *Fermier*.
+
+> Historique : la page de connexion affichait les identifiants de démonstration
+> (`admin@divinform.com / Admin@2025`) et ceux-ci étaient valides en production.
+> L'affichage a été retiré, les mots de passe ont été changés, et le seeder ne
+> contient plus de valeur en clair. Les anciens mots de passe présents dans
+> l'historique Git ne donnent plus accès à rien.
+
+## Gestion de l'exploitation
+
+Outil interne de suivi d'élevage, accessible sous `/admin/ferme`. Réservé aux rôles
+`super_admin` et `farm_manager` (routes `admin/farm/*`). Un fermier ne voit ni le
+contenu du site ni les utilisateurs ; la barre latérale se filtre selon son rôle.
+
+### Deux compteurs dérivés, jamais incrémentés
+
+C'est le cœur de la conception, et la raison pour laquelle ce module ne dérive pas :
+
+- **Stock d'un aliment** = rejeu de tout son historique de `feed_movements`
+  (`FeedItem::recomputeStock()`). Un `entree` ajoute, `sortie`/`perte` retranchent,
+  `ajustement` **fixe** le stock (inventaire physique). Si le stock devient négatif à
+  une date quelconque — y compris via une saisie antidatée — une `StockException` est
+  levée et la transaction est annulée : rien n'est écrit.
+- **Effectif d'une bande** = `initial_qty` moins la somme des `health_events` de type
+  `mortalite` (`FarmBatch::recomputeHeadcount()`). Supprimer une mortalité saisie par
+  erreur restaure donc l'effectif automatiquement.
+
+Il n'existe volontairement **pas** de table « rations » : une ration distribuée est un
+mouvement `sortie` portant un `farm_batch_id`. Stocks et alimentation partagent ainsi
+la même source de vérité, et l'indice de consommation (`feedConversionRatio()`) se
+calcule en sommant les sorties d'une bande.
+
+### Jeu de démonstration
+
+`php artisan db:seed --class=FarmDemoSeeder` crée 3 ateliers, 2 bandes, 1 truie,
+2 aliments et leur historique. Toutes les entrées portent le suffixe `[DÉMO]`.
+Pour les retirer (les bandes, animaux, mouvements et événements suivent en cascade) :
+
+```bash
+php artisan tinker --execute="
+  App\Models\FeedItem::where('name','like','%[DÉMO]%')->get()->each->delete();
+  App\Models\FarmUnit::where('name','like','%[DÉMO]%')->get()->each->delete();
+"
+```
+
+### Lien avec le catalogue
+
+`farm_batches.product_id` rattache une bande à un produit. Le stock vendable d'un
+produit est **calculé** (`withSum('availableBatches')`) comme la somme des effectifs
+des bandes au statut `disponible`. Aucune colonne `stock` n'est maintenue sur
+`products` : la ferme reste l'unique source de vérité. Le champ `farm_stock` de
+`ProductResource` vaut `null` tant que les tables de la ferme n'existent pas.
 
 ### Réponses d'erreur de l'API (nginx)
 

@@ -7,18 +7,30 @@ use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class ProductController extends Controller
 {
+    /**
+     * Le stock vendable vient de la ferme. Tant que le module de gestion n'est
+     * pas migré, on n'ajoute pas le calcul : la vitrine doit rester debout.
+     */
+    private function withFarmStock($query)
+    {
+        return Schema::hasTable('farm_batches')
+            ? $query->withSum('availableBatches as farm_stock', 'current_qty')
+            : $query;
+    }
+
     /**
      * GET /api/v1/products
      * Params: ?search=&category=&featured=&page=&per_page=
      */
     public function index(Request $request): JsonResponse
     {
-        $query = Product::active()
-            ->with(['category', 'specs'])
-            ->ordered();
+        $query = $this->withFarmStock(
+            Product::active()->with(['category', 'specs'])
+        )->ordered();
 
         // Filtre par catégorie (slug ou id)
         if ($request->filled('category')) {
@@ -55,10 +67,9 @@ class ProductController extends Controller
      */
     public function show(string $slug): JsonResponse
     {
-        $product = Product::active()
-            ->where('slug', $slug)
-            ->with(['category', 'specs'])
-            ->firstOrFail();
+        $product = $this->withFarmStock(
+            Product::active()->where('slug', $slug)->with(['category', 'specs'])
+        )->firstOrFail();
 
         return response()->json([
             'data' => new ProductResource($product),

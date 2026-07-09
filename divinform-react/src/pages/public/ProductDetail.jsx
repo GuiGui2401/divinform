@@ -91,6 +91,21 @@ export default function ProductDetail() {
               </div>
             )}
 
+            {/* Disponibilité — issue des bandes de la ferme marquées « disponible ».
+                Masquée tant qu'aucune bande n'est prête. */}
+            {product.farm_stock > 0 && (
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-4
+                              flex items-center gap-3">
+                <span className="text-2xl">📦</span>
+                <div>
+                  <div className="text-blue-dark font-bold text-sm">
+                    {product.farm_stock} disponible{product.farm_stock > 1 ? 's' : ''} à la ferme
+                  </div>
+                  <div className="text-gray-med text-xs mt-0.5">Issu de nos ateliers pédagogiques</div>
+                </div>
+              </div>
+            )}
+
             {/* Garantie */}
             <div className="bg-green/8 border border-green/20 rounded-xl p-4 mb-6
                             flex items-center gap-3">

@@ -13,7 +13,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::iHhLdEnTlWCBXRIV',
+            '_route' => 'generated::1P5Vm1frgkBc0KQr',
           ),
           1 => NULL,
           2 => 
@@ -32,7 +32,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::FssRuov1IQnMrnNA',
+            '_route' => 'generated::y7vLBmaYMqJ9inIk',
           ),
           1 => NULL,
           2 => 
@@ -51,7 +51,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::R7qxklUPyr15l4uF',
+            '_route' => 'generated::kAx7M3J0UetttO4i',
           ),
           1 => NULL,
           2 => 
@@ -70,7 +70,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ig7WrB00HvbNE7zc',
+            '_route' => 'generated::XHXjfPO03NrbCvbI',
           ),
           1 => NULL,
           2 => 
@@ -90,7 +90,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::RU5tOcG7RcCtzBsS',
+            '_route' => 'generated::zJZWIGTBnj8JKur9',
           ),
           1 => NULL,
           2 => 
@@ -110,7 +110,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::jYkTyPGZaRu72IHc',
+            '_route' => 'generated::cBirasqOhLUvMJIw',
           ),
           1 => NULL,
           2 => 
@@ -129,7 +129,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ih81WFTBypfuJuoN',
+            '_route' => 'generated::EOSZtLVSO4zppYhd',
           ),
           1 => NULL,
           2 => 
@@ -149,7 +149,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yZldXqM8ICIwYZEr',
+            '_route' => 'generated::nK4QDQ3Gnk3K1Bjg',
           ),
           1 => NULL,
           2 => 
@@ -169,7 +169,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HV74koXPzgpFFu18',
+            '_route' => 'generated::pW8SbcFf3dmKWFID',
           ),
           1 => NULL,
           2 => 
@@ -189,7 +189,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::OX7ujIzW7N5gHB29',
+            '_route' => 'generated::FNgsC1aUljcWqcD4',
           ),
           1 => NULL,
           2 => 
@@ -281,7 +281,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eZVbC97Er1HPVXnE',
+            '_route' => 'generated::2gQ8wVnauRLoJi9v',
           ),
           1 => NULL,
           2 => 
@@ -373,7 +373,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1Q0xpktb2oyaJJP6',
+            '_route' => 'generated::CP7yGhjMULBaFGza',
           ),
           1 => NULL,
           2 => 
@@ -392,7 +392,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4KDyYH66GW9eJjHv',
+            '_route' => 'generated::mbe1ErvSy6AbbabA',
           ),
           1 => NULL,
           2 => 
@@ -409,7 +409,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kmo0ZjeOOTDv9ORO',
+            '_route' => 'generated::KB6lS6bSEZmE2cP2',
           ),
           1 => NULL,
           2 => 
@@ -428,7 +428,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::N340MPSUFo6LTuFX',
+            '_route' => 'generated::z7dQ4EKnYr1GTLFC',
           ),
           1 => NULL,
           2 => 
@@ -477,13 +477,249 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/api/admin/farm/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::ewQcFA8b9q57eKHY',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/units' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'units.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'units.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/batches' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'batches.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'batches.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/animals' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'animals.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'animals.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/feed-items' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'feed-items.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'feed-items.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/feed-movements' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::FMw8LIIVTyyvZuSY',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::FWGgCq6SaZ9IGAjp',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/api/admin/farm/health-events' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::8FxXbedbbRw8X45n',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::6fDePmcR7smkwS6E',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/up' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::r4U8qg10jJy3X3Jx',
+            '_route' => 'generated::KzuMltGyv6ZG7d5y',
           ),
           1 => NULL,
           2 => 
@@ -500,7 +736,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/api/(?|v1/(?|formations/([^/]++)(?|(*:43)|/(?|view(*:58)|contact(*:72)))|categories/([^/]++)(*:100)|products/([^/]++)(?|(*:128)|/(?|view(*:144)|contact(*:159))))|admin/(?|formation(?|s/([^/]++)(?|(*:204))|\\-sessions/([^/]++)(?|(*:235)))|inscriptions/([^/]++)(?|(*:269))|categories/([^/]++)(?|(*:300))|products/([^/]++)(?|(*:329)|/images(?|(*:347)|/([^/]++)(*:364)))|users/([^/]++)(?|(*:391)))))/?$}sDu',
+      0 => '{^(?|/api/(?|v1/(?|formations/([^/]++)(?|(*:43)|/(?|view(*:58)|contact(*:72)))|categories/([^/]++)(*:100)|products/([^/]++)(?|(*:128)|/(?|view(*:144)|contact(*:159))))|admin/(?|f(?|ormation(?|s/([^/]++)(?|(*:207))|\\-sessions/([^/]++)(?|(*:238)))|arm/(?|units/([^/]++)(?|(*:272))|batches/([^/]++)(?|(*:300))|animals/([^/]++)(?|(*:328))|feed\\-(?|items/([^/]++)(?|(*:363))|movements/([^/]++)(*:390))|health\\-events/([^/]++)(*:422)))|inscriptions/([^/]++)(?|(*:456))|categories/([^/]++)(?|(*:487))|products/([^/]++)(?|(*:516)|/images(?|(*:534)|/([^/]++)(*:551)))|users/([^/]++)(?|(*:578)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -510,7 +746,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::sShLkAHzjOpx4cR5',
+            '_route' => 'generated::kdIfD91aTH8oEM3O',
           ),
           1 => 
           array (
@@ -533,7 +769,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::RBGFkdCvnGGvJZ5V',
+            '_route' => 'generated::JzzAlOQZy27I4Z1J',
           ),
           1 => 
           array (
@@ -555,7 +791,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4piwpJRSJjEdPWlM',
+            '_route' => 'generated::Knhq6KP8QEuy1cq2',
           ),
           1 => 
           array (
@@ -577,7 +813,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Htc9SRXNhcyeBhKh',
+            '_route' => 'generated::THc7afNgSPlNmb1Y',
           ),
           1 => 
           array (
@@ -600,7 +836,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::cYYFnsbWXlLtB3I3',
+            '_route' => 'generated::fSRhF6TWSvzdgkcV',
           ),
           1 => 
           array (
@@ -623,7 +859,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::D857pzK5aeqM0JB1',
+            '_route' => 'generated::po0CR9lnKPj82xBf',
           ),
           1 => 
           array (
@@ -645,7 +881,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::JWd6hSXRuPyyW2Iy',
+            '_route' => 'generated::sZoBdlTH3Psi8dvx',
           ),
           1 => 
           array (
@@ -661,7 +897,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      204 => 
+      207 => 
       array (
         0 => 
         array (
@@ -723,7 +959,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      235 => 
+      238 => 
       array (
         0 => 
         array (
@@ -765,13 +1001,245 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      269 => 
+      272 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::Moo4F64s3oMhkLAz',
+            '_route' => 'units.update',
+          ),
+          1 => 
+          array (
+            0 => 'farmUnit',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'units.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'farmUnit',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      300 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'batches.show',
+          ),
+          1 => 
+          array (
+            0 => 'farmBatch',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'batches.update',
+          ),
+          1 => 
+          array (
+            0 => 'farmBatch',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'batches.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'farmBatch',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      328 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'animals.update',
+          ),
+          1 => 
+          array (
+            0 => 'farmAnimal',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'animals.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'farmAnimal',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      363 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'feed-items.update',
+          ),
+          1 => 
+          array (
+            0 => 'feedItem',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'feed-items.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'feedItem',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      390 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::PlkyeqT46sMwiFAX',
+          ),
+          1 => 
+          array (
+            0 => 'feedMovement',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      422 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::5i17N5gDcOgvZSXg',
+          ),
+          1 => 
+          array (
+            0 => 'healthEvent',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      456 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::uHii2tOlxYH6QZJm',
           ),
           1 => 
           array (
@@ -790,7 +1258,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yKMUF3cxCKulh7aA',
+            '_route' => 'generated::Ey9HuEVqsZilnyBJ',
           ),
           1 => 
           array (
@@ -806,7 +1274,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      300 => 
+      487 => 
       array (
         0 => 
         array (
@@ -868,7 +1336,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      329 => 
+      516 => 
       array (
         0 => 
         array (
@@ -930,13 +1398,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      347 => 
+      534 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::LS0X2cIGwq7cHlon',
+            '_route' => 'generated::CJ96ZcMYyvnqqoeD',
           ),
           1 => 
           array (
@@ -952,13 +1420,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      364 => 
+      551 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::l2Ue64o0EgVVgDhW',
+            '_route' => 'generated::zpAW0v6yeJpgsFtn',
           ),
           1 => 
           array (
@@ -975,7 +1443,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      391 => 
+      578 => 
       array (
         0 => 
         array (
@@ -1052,7 +1520,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::iHhLdEnTlWCBXRIV' => 
+    'generated::1P5Vm1frgkBc0KQr' => 
     array (
       'methods' => 
       array (
@@ -1072,7 +1540,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::iHhLdEnTlWCBXRIV',
+        'as' => 'generated::1P5Vm1frgkBc0KQr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1088,7 +1556,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::FssRuov1IQnMrnNA' => 
+    'generated::y7vLBmaYMqJ9inIk' => 
     array (
       'methods' => 
       array (
@@ -1109,7 +1577,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::FssRuov1IQnMrnNA',
+        'as' => 'generated::y7vLBmaYMqJ9inIk',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1125,7 +1593,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::R7qxklUPyr15l4uF' => 
+    'generated::kAx7M3J0UetttO4i' => 
     array (
       'methods' => 
       array (
@@ -1146,7 +1614,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::R7qxklUPyr15l4uF',
+        'as' => 'generated::kAx7M3J0UetttO4i',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1162,7 +1630,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ig7WrB00HvbNE7zc' => 
+    'generated::XHXjfPO03NrbCvbI' => 
     array (
       'methods' => 
       array (
@@ -1184,7 +1652,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ig7WrB00HvbNE7zc',
+        'as' => 'generated::XHXjfPO03NrbCvbI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1200,7 +1668,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::RU5tOcG7RcCtzBsS' => 
+    'generated::zJZWIGTBnj8JKur9' => 
     array (
       'methods' => 
       array (
@@ -1221,7 +1689,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::RU5tOcG7RcCtzBsS',
+        'as' => 'generated::zJZWIGTBnj8JKur9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1237,7 +1705,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::sShLkAHzjOpx4cR5' => 
+    'generated::kdIfD91aTH8oEM3O' => 
     array (
       'methods' => 
       array (
@@ -1258,7 +1726,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::sShLkAHzjOpx4cR5',
+        'as' => 'generated::kdIfD91aTH8oEM3O',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1274,7 +1742,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::RBGFkdCvnGGvJZ5V' => 
+    'generated::JzzAlOQZy27I4Z1J' => 
     array (
       'methods' => 
       array (
@@ -1294,7 +1762,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::RBGFkdCvnGGvJZ5V',
+        'as' => 'generated::JzzAlOQZy27I4Z1J',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1310,7 +1778,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4piwpJRSJjEdPWlM' => 
+    'generated::Knhq6KP8QEuy1cq2' => 
     array (
       'methods' => 
       array (
@@ -1330,7 +1798,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4piwpJRSJjEdPWlM',
+        'as' => 'generated::Knhq6KP8QEuy1cq2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1346,7 +1814,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::jYkTyPGZaRu72IHc' => 
+    'generated::cBirasqOhLUvMJIw' => 
     array (
       'methods' => 
       array (
@@ -1367,7 +1835,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::jYkTyPGZaRu72IHc',
+        'as' => 'generated::cBirasqOhLUvMJIw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1383,7 +1851,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ih81WFTBypfuJuoN' => 
+    'generated::EOSZtLVSO4zppYhd' => 
     array (
       'methods' => 
       array (
@@ -1404,7 +1872,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ih81WFTBypfuJuoN',
+        'as' => 'generated::EOSZtLVSO4zppYhd',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1420,7 +1888,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Htc9SRXNhcyeBhKh' => 
+    'generated::THc7afNgSPlNmb1Y' => 
     array (
       'methods' => 
       array (
@@ -1441,7 +1909,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Htc9SRXNhcyeBhKh',
+        'as' => 'generated::THc7afNgSPlNmb1Y',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1457,7 +1925,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yZldXqM8ICIwYZEr' => 
+    'generated::nK4QDQ3Gnk3K1Bjg' => 
     array (
       'methods' => 
       array (
@@ -1478,7 +1946,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yZldXqM8ICIwYZEr',
+        'as' => 'generated::nK4QDQ3Gnk3K1Bjg',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1494,7 +1962,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::cYYFnsbWXlLtB3I3' => 
+    'generated::fSRhF6TWSvzdgkcV' => 
     array (
       'methods' => 
       array (
@@ -1515,7 +1983,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::cYYFnsbWXlLtB3I3',
+        'as' => 'generated::fSRhF6TWSvzdgkcV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1531,7 +1999,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::D857pzK5aeqM0JB1' => 
+    'generated::po0CR9lnKPj82xBf' => 
     array (
       'methods' => 
       array (
@@ -1551,7 +2019,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::D857pzK5aeqM0JB1',
+        'as' => 'generated::po0CR9lnKPj82xBf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1567,7 +2035,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::JWd6hSXRuPyyW2Iy' => 
+    'generated::sZoBdlTH3Psi8dvx' => 
     array (
       'methods' => 
       array (
@@ -1587,7 +2055,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::JWd6hSXRuPyyW2Iy',
+        'as' => 'generated::sZoBdlTH3Psi8dvx',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1603,7 +2071,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HV74koXPzgpFFu18' => 
+    'generated::pW8SbcFf3dmKWFID' => 
     array (
       'methods' => 
       array (
@@ -1624,7 +2092,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::HV74koXPzgpFFu18',
+        'as' => 'generated::pW8SbcFf3dmKWFID',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1640,7 +2108,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::OX7ujIzW7N5gHB29' => 
+    'generated::FNgsC1aUljcWqcD4' => 
     array (
       'methods' => 
       array (
@@ -1663,7 +2131,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::OX7ujIzW7N5gHB29',
+        'as' => 'generated::FNgsC1aUljcWqcD4',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2026,7 +2494,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eZVbC97Er1HPVXnE' => 
+    'generated::2gQ8wVnauRLoJi9v' => 
     array (
       'methods' => 
       array (
@@ -2049,7 +2517,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::eZVbC97Er1HPVXnE',
+        'as' => 'generated::2gQ8wVnauRLoJi9v',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2065,7 +2533,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Moo4F64s3oMhkLAz' => 
+    'generated::uHii2tOlxYH6QZJm' => 
     array (
       'methods' => 
       array (
@@ -2087,7 +2555,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Moo4F64s3oMhkLAz',
+        'as' => 'generated::uHii2tOlxYH6QZJm',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2103,7 +2571,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yKMUF3cxCKulh7aA' => 
+    'generated::Ey9HuEVqsZilnyBJ' => 
     array (
       'methods' => 
       array (
@@ -2125,7 +2593,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yKMUF3cxCKulh7aA',
+        'as' => 'generated::Ey9HuEVqsZilnyBJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2527,7 +2995,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LS0X2cIGwq7cHlon' => 
+    'generated::CJ96ZcMYyvnqqoeD' => 
     array (
       'methods' => 
       array (
@@ -2549,7 +3017,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LS0X2cIGwq7cHlon',
+        'as' => 'generated::CJ96ZcMYyvnqqoeD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2565,7 +3033,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::l2Ue64o0EgVVgDhW' => 
+    'generated::zpAW0v6yeJpgsFtn' => 
     array (
       'methods' => 
       array (
@@ -2587,7 +3055,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::l2Ue64o0EgVVgDhW',
+        'as' => 'generated::zpAW0v6yeJpgsFtn',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2603,7 +3071,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1Q0xpktb2oyaJJP6' => 
+    'generated::CP7yGhjMULBaFGza' => 
     array (
       'methods' => 
       array (
@@ -2625,7 +3093,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::1Q0xpktb2oyaJJP6',
+        'as' => 'generated::CP7yGhjMULBaFGza',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2641,7 +3109,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4KDyYH66GW9eJjHv' => 
+    'generated::mbe1ErvSy6AbbabA' => 
     array (
       'methods' => 
       array (
@@ -2665,7 +3133,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4KDyYH66GW9eJjHv',
+        'as' => 'generated::mbe1ErvSy6AbbabA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2681,7 +3149,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::kmo0ZjeOOTDv9ORO' => 
+    'generated::KB6lS6bSEZmE2cP2' => 
     array (
       'methods' => 
       array (
@@ -2704,7 +3172,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::kmo0ZjeOOTDv9ORO',
+        'as' => 'generated::KB6lS6bSEZmE2cP2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2720,7 +3188,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::N340MPSUFo6LTuFX' => 
+    'generated::z7dQ4EKnYr1GTLFC' => 
     array (
       'methods' => 
       array (
@@ -2743,7 +3211,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::N340MPSUFo6LTuFX',
+        'as' => 'generated::z7dQ4EKnYr1GTLFC',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2957,7 +3425,931 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::r4U8qg10jJy3X3Jx' => 
+    'generated::ewQcFA8b9q57eKHY' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmDashboardController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmDashboardController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::ewQcFA8b9q57eKHY',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'units.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/units',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'units.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'units.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/units',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'units.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'units.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'api/admin/farm/units/{farmUnit}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'units.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@update',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'units.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/units/{farmUnit}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'units.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmUnitController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'batches.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/batches',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'batches.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'batches.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/batches',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'batches.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'batches.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/batches/{farmBatch}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'batches.show',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@show',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@show',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'batches.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'api/admin/farm/batches/{farmBatch}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'batches.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@update',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'batches.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/batches/{farmBatch}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'batches.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmBatchController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'animals.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/animals',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'animals.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'animals.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/animals',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'animals.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'animals.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'api/admin/farm/animals/{farmAnimal}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'animals.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@update',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'animals.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/animals/{farmAnimal}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'animals.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FarmAnimalController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'feed-items.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/feed-items',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'feed-items.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'feed-items.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/feed-items',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'feed-items.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'feed-items.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'api/admin/farm/feed-items/{feedItem}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'feed-items.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@update',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'feed-items.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/feed-items/{feedItem}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'as' => 'feed-items.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedItemController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::FMw8LIIVTyyvZuSY' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/feed-movements',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::FMw8LIIVTyyvZuSY',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::FWGgCq6SaZ9IGAjp' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/feed-movements',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::FWGgCq6SaZ9IGAjp',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::PlkyeqT46sMwiFAX' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/feed-movements/{feedMovement}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\FeedMovementController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::PlkyeqT46sMwiFAX',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::8FxXbedbbRw8X45n' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/admin/farm/health-events',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@index',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::8FxXbedbbRw8X45n',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::6fDePmcR7smkwS6E' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/admin/farm/health-events',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@store',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::6fDePmcR7smkwS6E',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::5i17N5gDcOgvZSXg' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/admin/farm/health-events/{healthEvent}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth.jwt',
+          2 => 'role:super_admin,farm_manager',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\Farm\\HealthEventController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'api/admin/farm',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::5i17N5gDcOgvZSXg',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::KzuMltGyv6ZG7d5y' => 
     array (
       'methods' => 
       array (
@@ -2985,8 +4377,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'/var/www/clients/client0/web105/web/divinform/divinform-api/vendor/laravel/framework/src/Illuminate/Foundation/Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"000000000000060e0000000000000000";}}',
-        'as' => 'generated::r4U8qg10jJy3X3Jx',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000006260000000000000000";}}',
+        'as' => 'generated::KzuMltGyv6ZG7d5y',
       ),
       'fallback' => false,
       'defaults' => 
