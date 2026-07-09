@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #0D1B2A;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-green to-green-light text-white font-semibold px-8 py-3 rounded-xl
+           transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg inline-flex items-center gap-2;
+  }
+  .btn-outline {
+    @apply border border-white/40 text-white font-semibold px-8 py-3 rounded-xl
+           transition-all duration-200 hover:bg-white/10 inline-flex items-center gap-2;
+  }
+  .btn-blue {
+    @apply bg-blue-dark text-white font-semibold px-5 py-2.5 rounded-lg text-sm
+           transition-all duration-200 hover:bg-blue-mid inline-flex items-center gap-2;
+  }
+  .btn-green {
+    @apply bg-green text-white font-semibold px-5 py-2.5 rounded-lg text-sm
+           transition-all duration-200 hover:bg-green-light inline-flex items-center gap-2;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-200 hover:shadow-card-hover hover:-translate-y-1;
+  }
+  .section-eyebrow {
+    @apply text-blue-mid text-xs font-bold tracking-widest uppercase block mb-3;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-dark leading-tight mb-4;
+  }
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm bg-off-white
+           outline-none transition-all focus:border-blue-mid focus:ring-2 focus:ring-blue-mid/10 focus:bg-white;
+  }
+  .form-label {
+    @apply block text-sm font-semibold text-dark mb-1.5;
+  }
+  .badge {
+    @apply absolute top-3 left-3 text-white text-xs font-bold px-2.5 py-1 rounded-full;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-5 py-2.5 text-white/60 text-sm cursor-pointer
+           transition-all duration-150 border-l-[3px] border-transparent
+           hover:text-white hover:bg-white/5;
+  }
+  .sidebar-item.active {
+    @apply text-white bg-blue-mid/20 border-l-blue-light;
+  }
+  .admin-card {
+    @apply bg-white rounded-2xl shadow-card overflow-hidden mb-6;
+  }
+  .stat-card {
+    @apply bg-white rounded-xl shadow-card p-6 flex items-center gap-4;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Poppins', sans-serif; }
+}
+
+/* Scroll animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeInUp 0.5s ease forwards; }
+
+/* Dot pulse */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+.animate-pulse-dot { animation: pulseDot 2s infinite; }

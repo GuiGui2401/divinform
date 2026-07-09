@@ -1,0 +1,71 @@
+# Root ignores for both projects
+.DS_Store
+Thumbs.db
+*.log
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE/editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Laravel / PHP
+medex65-api/vendor/
+medex65-api/.env
+medex65-api/.env.*
+medex65-api/.phpunit.result.cache
+medex65-api/.phpunit.result.cache
+medex65-api/storage/*.key
+medex65-api/storage/app/public
+medex65-api/storage/framework/cache/data
+medex65-api/storage/framework/sessions
+medex65-api/storage/framework/testing
+medex65-api/storage/framework/views
+medex65-api/storage/logs
+medex65-api/public/storage
+medex65-api/node_modules/
+medex65-api/homestead.yaml
+medex65-api/homestead.json
+medex65-api/.idea/
+medex65-api/.vscode/
+
+# React / Node
+medex65-react/node_modules/
+medex65-react/dist/
+medex65-react/.vite/
+medex65-react/build/
+medex65-react/.env
+medex65-react/.env.*
+medex65-react/npm-debug.log*
+medex65-react/yarn-debug.log*
+medex65-react/yarn-error.log*
+medex65-react/pnpm-debug.log*
+medex65-react/.idea/
+medex65-react/.vscode/
+
+# Composer
+medex65-api/vendor/
+medex65-api/composer.lock
+
+# PHPUnit
+medex65-api/phpunit.xml
+
+# Laravel Mix / Vite
+medex65-api/public/hot
+medex65-api/public/storage
+
+# Misc
+*.swp
+*.lock
+*.bak
+*~
+
+# Ignore environment files anywhere
+**/.env
+**/.env.*
+.aider*
