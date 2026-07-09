@@ -121,6 +121,33 @@ Puis, côté frontend :
 cd divinform-react && npm run build
 ```
 
+### Réponses d'erreur de l'API (nginx)
+
+Le vhost ISPConfig de `admin.divinform.com` active `fastcgi_intercept_errors on` dans
+`location @php`, avec `error_page 401 /error/401.html` (et 400/403/404/405/500/502/503).
+Nginx intercepte alors les réponses d'erreur de Laravel et sert un fichier statique.
+Tant que `divinform-api/public/error/` était **vide**, le fichier manquant provoquait un
+404, lui-même intercepté, et `recursive_error_pages on` bouclait jusqu'à un **500 HTML** :
+
+```
+[error] rewrite or internal redirection cycle while internally redirecting to "/error/404.html"
+```
+
+Toute réponse non-2xx de l'API (401 jeton expiré, 403 rôle insuffisant, 404 slug inconnu)
+devenait donc un 500 — seul le 422 passait, n'étant pas dans la liste `error_page`.
+
+Deux protections sont en place :
+
+1. `divinform-api/public/error/*.html` — les 8 pages sont versionnées. Elles suffisent
+   à casser la boucle : nginx sert la page avec **le code HTTP d'origine**.
+2. `fastcgi_intercept_errors off;` dans `location @php` du vhost — nginx laisse alors
+   passer le JSON de Laravel intact (`{"message":"Token invalide."}`).
+
+> ⚠️ **ISPConfig régénère le vhost** à chaque modification du site depuis le panneau,
+> ce qui rétablirait `on`. Pour rendre le réglage durable, recopier la ligne dans le
+> champ « Directives nginx » de la fiche du site. Si elle est perdue, les pages
+> statiques du point 1 évitent le retour du 500.
+
 ### Numéros de téléphone
 
 Les numéros sont saisis au **format national gabonais** (`060337821`). La fonction
