@@ -3,9 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Public\CategoryController;
+use App\Http\Controllers\Public\FormationController;
+use App\Http\Controllers\Public\InscriptionController;
 use App\Http\Controllers\Public\ProductController;
 use App\Http\Controllers\Public\SettingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminFormationController;
+use App\Http\Controllers\Admin\AdminFormationSessionController;
+use App\Http\Controllers\Admin\AdminInscriptionController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminUserController;
@@ -14,7 +19,7 @@ use App\Http\Controllers\Admin\MediaController;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes — Ferme Divinform
+| API Routes — C.F Divin Élevage
 |--------------------------------------------------------------------------
 */
 
@@ -31,6 +36,16 @@ Route::prefix('auth')->group(function () {
 
 // ── Public (sans authentification) ─────────────────────────────────────
 Route::prefix('v1')->group(function () {
+
+    // Formations — cœur du centre de formation
+    Route::get('formations',                       [FormationController::class, 'index']);
+    Route::get('formations/{slug}',                [FormationController::class, 'show']);
+    Route::post('formations/{formation}/view',     [FormationController::class, 'trackView']);
+    Route::post('formations/{formation}/contact',  [FormationController::class, 'trackContact']);
+
+    // Demande d'inscription (limitée pour endiguer le spam)
+    Route::post('inscriptions', [InscriptionController::class, 'store'])
+         ->middleware('throttle:5,10');
 
     // Catégories
     Route::get('categories',        [CategoryController::class, 'index']);
@@ -51,6 +66,14 @@ Route::prefix('admin')->middleware(['auth.jwt', 'role:super_admin,editor'])->gro
 
     // Stats dashboard
     Route::get('stats', [AdminStatsController::class, 'index']);
+
+    // Centre de formation
+    Route::apiResource('formations', AdminFormationController::class);
+    Route::apiResource('formation-sessions', AdminFormationSessionController::class)
+         ->except(['show']);
+    Route::get('inscriptions',                  [AdminInscriptionController::class, 'index']);
+    Route::put('inscriptions/{inscription}',    [AdminInscriptionController::class, 'update']);
+    Route::delete('inscriptions/{inscription}', [AdminInscriptionController::class, 'destroy']);
 
     // Catégories
     Route::apiResource('categories', AdminCategoryController::class);

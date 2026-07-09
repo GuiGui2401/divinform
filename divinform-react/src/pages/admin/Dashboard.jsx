@@ -36,11 +36,12 @@ export default function Dashboard() {
     load()
   }, [dispatch])
 
+  // Le centre de formation d'abord ; la ferme est le volet secondaire.
   const statCards = [
-    { label: 'Produits actifs',   icon: '🧺', value: stats?.products_count  ?? products.length,    bg: 'rgba(46,90,31,0.08)',  trend: '↑ +2 ce mois' },
-    { label: 'Catégories',        icon: '🗂️', value: stats?.categories_count ?? categories.length,  bg: 'rgba(39,174,96,0.08)',  trend: 'Stable' },
-    { label: 'Vues ce mois',      icon: '👁️', value: stats?.views_total      ?? '—',                bg: 'rgba(74,124,47,0.08)', trend: '↑ +18%' },
-    { label: 'Contacts WhatsApp', icon: '💬', value: stats?.contacts_total   ?? '—',                bg: 'rgba(231,76,60,0.08)',  trend: '↑ +8 cette sem.' },
+    { label: 'Formations publiées',   icon: '🎓', value: stats?.formations_count   ?? '—', bg: 'rgba(46,90,31,0.08)',   hint: 'Au catalogue' },
+    { label: 'Sessions à venir',      icon: '📅', value: stats?.sessions_upcoming  ?? '—', bg: 'rgba(39,174,96,0.08)',  hint: 'Inscriptions ouvertes' },
+    { label: "Demandes d'inscription", icon: '📝', value: stats?.inscriptions_new  ?? '—', bg: 'rgba(231,76,60,0.08)',  hint: 'Nouvelles, à traiter', to: '/admin/inscriptions' },
+    { label: 'Produits de la ferme',  icon: '🧺', value: stats?.products_count     ?? products.length, bg: 'rgba(74,124,47,0.08)', hint: `${stats?.categories_count ?? categories.length} catégories` },
   ]
 
   if (loading) {
@@ -56,7 +57,9 @@ export default function Dashboard() {
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
         {statCards.map((s) => (
-          <div key={s.label} className="stat-card">
+          <div key={s.label}
+               onClick={s.to ? () => navigate(s.to) : undefined}
+               className={`stat-card ${s.to ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}>
             <div className="rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                  style={{ background: s.bg, width: 52, height: 52 }}>
               {s.icon}
@@ -64,11 +67,78 @@ export default function Dashboard() {
             <div>
               <div className="font-display font-extrabold text-dark text-2xl">{s.value}</div>
               <div className="text-gray-med text-xs mt-0.5">{s.label}</div>
-              <div className="text-green text-xs font-semibold mt-1">{s.trend}</div>
+              <div className="text-gray-med/70 text-xs mt-1">{s.hint}</div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Dernières demandes d'inscription */}
+      {stats?.recent_inscriptions?.length > 0 && (
+        <div className="admin-card mb-6">
+          <div className="p-6 border-b border-gray-100 flex items-center justify-between">
+            <h2 className="font-display font-bold text-dark">Dernières demandes d'inscription</h2>
+            <button onClick={() => navigate('/admin/inscriptions')}
+                    className="text-xs text-blue-mid hover:underline bg-transparent border-0 cursor-pointer">
+              Tout voir →
+            </button>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-off-white">
+                <tr>
+                  {['Candidat', 'Téléphone', 'Formation', 'Statut'].map((h) => (
+                    <th key={h} className="text-left px-5 py-3 text-xs font-bold text-gray-med uppercase tracking-wider">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {stats.recent_inscriptions.map((i) => (
+                  <tr key={i.id} className="border-t border-gray-100 hover:bg-off-white/50">
+                    <td className="px-5 py-3 font-semibold text-dark text-sm">{i.name}</td>
+                    <td className="px-5 py-3 text-sm text-gray-med">{i.phone}</td>
+                    <td className="px-5 py-3 text-sm text-gray-med">{i.formation_title || '—'}</td>
+                    <td className="px-5 py-3">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-dark">
+                        {i.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* Top formations */}
+      {stats?.top_formations?.length > 0 && (
+        <div className="admin-card mb-6">
+          <div className="p-6 border-b border-gray-100">
+            <h2 className="font-display font-bold text-dark">Formations les plus consultées</h2>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-off-white">
+                <tr>
+                  {['Formation', 'Vues', 'Contacts'].map((h) => (
+                    <th key={h} className="text-left px-5 py-3 text-xs font-bold text-gray-med uppercase tracking-wider">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {stats.top_formations.map((f) => (
+                  <tr key={f.id} className="border-t border-gray-100 hover:bg-off-white/50">
+                    <td className="px-5 py-3 font-semibold text-dark text-sm">{f.title}</td>
+                    <td className="px-5 py-3 text-sm text-blue-mid font-semibold">{f.views_count}</td>
+                    <td className="px-5 py-3 text-sm text-green font-semibold">{f.contact_count}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
 
       {/* Top produits */}
       {stats?.top_products?.length > 0 && (

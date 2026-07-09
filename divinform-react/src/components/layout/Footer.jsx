@@ -8,39 +8,39 @@ const scrollTo = (hash) => {
 }
 
 const NAV = [
-  { label: 'Accueil',              hash: 'hero' },
-  { label: 'Produits laitiers',    hash: 'produits' },
-  { label: 'Viandes & charcuterie',hash: 'produits' },
-  { label: 'Œufs & volaille',      hash: 'produits' },
-  { label: 'Nos engagements',      hash: 'pourquoi' },
-  { label: 'Contact',              hash: 'contact' },
+  { label: 'Accueil',           hash: 'hero' },
+  { label: 'Nos formations',    hash: 'formations' },
+  { label: 'Pourquoi nous',     hash: 'pourquoi' },
+  { label: 'Produits de la ferme', hash: 'produits' },
+  { label: 'Contact',           hash: 'contact' },
 ]
 
 const DEFAULT_SERVICES = [
-  { label: 'Vente directe du producteur' },
-  { label: 'Produits fermiers frais' },
-  { label: 'Livraison locale' },
-  { label: 'Paniers & colis fermiers' },
+  { label: 'Formations en élevage' },
+  { label: 'Formations en agriculture' },
+  { label: 'Accompagnement des porteurs de projet' },
+  { label: 'Ferme-école & travaux pratiques' },
 ]
 
 export default function Footer() {
   const { get, list } = useSettings()
   const logoImg  = get('logo_image_url')
-  const siteName = get('site_name', 'Ferme Divinform')
-  const email    = get('email', 'contact@divinform.com')
+  const siteName = get('site_name', 'C.F Divin Élevage')
+  const email    = get('email', 'divinformelevage@gmail.com')
   const services = list('footer_services', DEFAULT_SERVICES)
 
   const socials = [
-    { url: waLink(),                       label: '💬', hover: 'hover:bg-[#25D366]' },
-    { url: callLink(),                     label: '📞', hover: 'hover:bg-blue-mid' },
-    { url: mailLink(email),                label: '📧', hover: 'hover:bg-blue-mid' },
-    { url: get('facebook_url'),            label: '📘', hover: 'hover:bg-[#1877F2]' },
-    { url: get('instagram_url'),           label: '📸', hover: 'hover:bg-[#E4405F]' },
-    { url: get('linkedin_url'),            label: '💼', hover: 'hover:bg-[#0A66C2]' },
-    { url: get('youtube_url'),             label: '▶️', hover: 'hover:bg-[#FF0000]' },
+    { url: waLink(),                       label: '💬', title: 'WhatsApp',  hover: 'hover:bg-[#25D366]' },
+    { url: callLink(),                     label: '📞', title: 'Téléphone', hover: 'hover:bg-blue-mid' },
+    { url: mailLink(email),                label: '📧', title: 'Email',     hover: 'hover:bg-blue-mid' },
+    { url: get('facebook_url'),            label: '📘', title: 'Facebook',  hover: 'hover:bg-[#1877F2]' },
+    { url: get('tiktok_url'),              label: '🎵', title: 'TikTok',    hover: 'hover:bg-black' },
+    { url: get('instagram_url'),           label: '📸', title: 'Instagram', hover: 'hover:bg-[#E4405F]' },
+    { url: get('linkedin_url'),            label: '💼', title: 'LinkedIn',  hover: 'hover:bg-[#0A66C2]' },
+    { url: get('youtube_url'),             label: '▶️', title: 'YouTube',   hover: 'hover:bg-[#FF0000]' },
   ].filter((s) => s.url)
 
-  const copyright = get('copyright', '© {year} Ferme Divinform. Tous droits réservés.')
+  const copyright = get('copyright', '© {year} C.F Divin Élevage. Tous droits réservés.')
     .replace('{year}', new Date().getFullYear())
 
   return (
@@ -54,16 +54,17 @@ export default function Footer() {
                               flex items-center justify-center text-base overflow-hidden">
                 {logoImg
                   ? <img src={logoImg} alt={siteName} className="w-full h-full object-cover" />
-                  : get('logo_emoji', '🌾')}
+                  : get('logo_emoji', '🎓')}
               </div>
               <span className="font-display font-bold text-white text-lg">{siteName}</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              {get('footer_about', 'Votre ferme de proximité. Produits fermiers frais, vente directe du producteur, savoir-faire authentique.')}
+              {get('footer_about', 'Centre de formation en élevage et en agriculture. Nous formons celles et ceux qui veulent vivre de la terre, sur une ferme-école en activité.')}
             </p>
             <div className="flex gap-3 mt-5 flex-wrap">
-              {socials.map((s, i) => (
-                <a key={i} href={s.url} target="_blank" rel="noopener"
+              {socials.map((s) => (
+                <a key={s.title} href={s.url} target="_blank" rel="noopener noreferrer"
+                   title={s.title} aria-label={s.title}
                    className={`w-9 h-9 bg-white/8 ${s.hover} rounded-lg flex items-center
                               justify-center text-sm transition-colors`}>{s.label}</a>
               ))}
@@ -110,7 +111,7 @@ export default function Footer() {
                         items-center gap-3 text-xs">
           <span>{copyright}</span>
           <span>
-            {get('address', 'Cameroun — Bafoussam')} —{' '}
+            {get('address', 'C.F Divin Élevage')} —{' '}
             <a href={mailLink(email)} className="text-green-light hover:underline">
               {email}
             </a>

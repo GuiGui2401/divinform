@@ -3,10 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSettings } from '@/hooks/useSettings'
 
 const NAV_LINKS = [
-  { label: 'Accueil',      to: '/', hash: 'hero' },
-  { label: 'Produits',     to: '/', hash: 'produits' },
-  { label: 'Pourquoi nous',to: '/', hash: 'pourquoi' },
-  { label: 'Contact',      to: '/', hash: 'contact' },
+  { label: 'Accueil',        to: '/', hash: 'hero' },
+  { label: 'Nos formations', to: '/', hash: 'formations' },
+  { label: 'Pourquoi nous',  to: '/', hash: 'pourquoi' },
+  { label: 'La ferme',       to: '/', hash: 'produits' },
+  { label: 'Contact',        to: '/', hash: 'contact' },
 ]
 
 export default function Navbar() {
@@ -25,8 +26,15 @@ export default function Navbar() {
   const scrollTo = (hash) => {
     setMenuOpen(false)
     const el = document.getElementById(hash)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-    else navigate('/')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+    // Hors de la page d'accueil : on y revient, puis on rejoint l'ancre.
+    navigate('/')
+    requestAnimationFrame(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' })
+    })
   }
 
   return (
@@ -41,12 +49,12 @@ export default function Navbar() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-light to-blue-light
                               flex items-center justify-center text-lg flex-shrink-0 overflow-hidden">
                 {logoImg
-                  ? <img src={logoImg} alt={get('site_name', 'Ferme Divinform')} className="w-full h-full object-cover" />
-                  : get('logo_emoji', '🌾')}
+                  ? <img src={logoImg} alt={get('site_name', 'C.F Divin Élevage')} className="w-full h-full object-cover" />
+                  : get('logo_emoji', '🎓')}
               </div>
               <div>
-                <span className="font-display font-bold text-white text-lg leading-tight block">{get('site_name', 'Ferme Divinform')}</span>
-                <span className="text-white/50 text-[0.6rem] tracking-widest uppercase">{get('tagline', 'Le bon, le vrai, le fermier')}</span>
+                <span className="font-display font-bold text-white text-lg leading-tight block">{get('site_name', 'C.F Divin Élevage')}</span>
+                <span className="text-white/50 text-[0.6rem] tracking-widest uppercase">{get('tagline', 'Centre de formation en élevage')}</span>
               </div>
             </Link>
 

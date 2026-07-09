@@ -818,6 +818,7 @@
       'social' => 'Réseaux sociaux',
       'hero' => 'Accueil — Bannière',
       'stats' => 'Accueil — Chiffres clés',
+      'formations' => 'Accueil — Nos formations',
       'sections' => 'Accueil — Titres de sections',
       'why' => 'Accueil — Pourquoi nous',
       'footer' => 'Pied de page',
@@ -830,7 +831,7 @@
         'group' => 'branding',
         'label' => 'Nom du site',
         'type' => 'text',
-        'default' => 'Ferme Divinform',
+        'default' => 'C.F Divin Élevage',
         'rules' => 'nullable|string|max:100',
         'public' => true,
       ),
@@ -839,7 +840,7 @@
         'group' => 'branding',
         'label' => 'Raison sociale',
         'type' => 'text',
-        'default' => 'Ferme Divinform',
+        'default' => 'Centre de Formation Divin Élevage',
         'rules' => 'nullable|string|max:150',
         'public' => true,
       ),
@@ -848,7 +849,7 @@
         'group' => 'branding',
         'label' => 'Logo (emoji)',
         'type' => 'text',
-        'default' => '🌾',
+        'default' => '🎓',
         'rules' => 'nullable|string|max:16',
         'public' => true,
         'help' => 'Emoji affiché dans le logo si aucune image n\'est fournie.',
@@ -868,7 +869,7 @@
         'group' => 'branding',
         'label' => 'Slogan court (sous le logo)',
         'type' => 'text',
-        'default' => 'Le bon, le vrai, le fermier',
+        'default' => 'Centre de formation en élevage',
         'rules' => 'nullable|string|max:120',
         'public' => true,
       ),
@@ -877,7 +878,7 @@
         'group' => 'branding',
         'label' => 'Slogan principal',
         'type' => 'text',
-        'default' => 'Le meilleur de la ferme, en vente directe',
+        'default' => 'La forge des leaders pour un élevage sain',
         'rules' => 'nullable|string|max:200',
         'public' => true,
       ),
@@ -886,7 +887,7 @@
         'group' => 'contact',
         'label' => 'Téléphone 1',
         'type' => 'text',
-        'default' => '+237 696 809 909',
+        'default' => '060337821',
         'rules' => 'nullable|string|max:30',
         'public' => true,
       ),
@@ -895,25 +896,26 @@
         'group' => 'contact',
         'label' => 'Téléphone 2',
         'type' => 'text',
-        'default' => '+237 696 534 179',
+        'default' => '076328536',
         'rules' => 'nullable|string|max:30',
         'public' => true,
       ),
       'whatsapp' => 
       array (
         'group' => 'contact',
-        'label' => 'Numéro WhatsApp (sans +)',
+        'label' => 'Numéro WhatsApp',
         'type' => 'text',
-        'default' => '237696809909',
+        'default' => '060337821',
         'rules' => 'nullable|string|max:30',
         'public' => true,
+        'help' => 'Format national (060337821) ou international (+241 60 33 78 21). Le zéro initial est retiré automatiquement pour le lien wa.me.',
       ),
       'email' => 
       array (
         'group' => 'contact',
         'label' => 'Adresse email',
         'type' => 'email',
-        'default' => 'contact@divinform.com',
+        'default' => 'divinformelevage@gmail.com',
         'rules' => 'nullable|email|max:120',
         'public' => true,
       ),
@@ -931,7 +933,7 @@
         'group' => 'contact',
         'label' => 'Adresse (ligne 1)',
         'type' => 'text',
-        'default' => 'Ferme Divinform',
+        'default' => 'C.F Divin Élevage',
         'rules' => 'nullable|string|max:200',
         'public' => true,
       ),
@@ -940,7 +942,7 @@
         'group' => 'contact',
         'label' => 'Adresse (ligne 2)',
         'type' => 'text',
-        'default' => 'Vente directe à la ferme',
+        'default' => 'Gabon',
         'rules' => 'nullable|string|max:200',
         'public' => true,
       ),
@@ -949,9 +951,19 @@
         'group' => 'contact',
         'label' => 'Message WhatsApp par défaut',
         'type' => 'textarea',
-        'default' => 'Bonjour, je souhaite avoir des informations sur vos produits de la ferme.',
+        'default' => 'Bonjour, je souhaite avoir des informations sur le centre de formation.',
         'rules' => 'nullable|string|max:400',
         'public' => true,
+      ),
+      'wa_msg_formation' => 
+      array (
+        'group' => 'contact',
+        'label' => 'Message WhatsApp (inscription formation)',
+        'type' => 'textarea',
+        'default' => 'Bonjour, je souhaite m\'inscrire à la formation : {formation}. Pouvez-vous me communiquer les modalités ?',
+        'rules' => 'nullable|string|max:400',
+        'public' => true,
+        'help' => 'Utilisez {formation} pour insérer le titre de la formation et {session} pour la session choisie.',
       ),
       'wa_msg_product' => 
       array (
@@ -968,7 +980,16 @@
         'group' => 'social',
         'label' => 'Facebook',
         'type' => 'url',
-        'default' => '',
+        'default' => 'https://www.facebook.com/profile.php?id=61572106177650',
+        'rules' => 'nullable|string|max:200',
+        'public' => true,
+      ),
+      'tiktok_url' => 
+      array (
+        'group' => 'social',
+        'label' => 'TikTok',
+        'type' => 'url',
+        'default' => 'https://www.tiktok.com/@user9655911945880',
         'rules' => 'nullable|string|max:200',
         'public' => true,
       ),
@@ -1004,7 +1025,7 @@
         'group' => 'hero',
         'label' => 'Sur-titre (badge)',
         'type' => 'text',
-        'default' => 'Produits fermiers en vente directe',
+        'default' => 'Centre de formation en élevage',
         'rules' => 'nullable|string|max:120',
         'public' => true,
       ),
@@ -1013,7 +1034,7 @@
         'group' => 'hero',
         'label' => 'Titre — début',
         'type' => 'text',
-        'default' => 'Le meilleur',
+        'default' => 'Apprenez le métier',
         'rules' => 'nullable|string|max:120',
         'public' => true,
       ),
@@ -1022,7 +1043,7 @@
         'group' => 'hero',
         'label' => 'Titre — mot surligné (vert)',
         'type' => 'text',
-        'default' => 'de la ferme',
+        'default' => 'd\'éleveur',
         'rules' => 'nullable|string|max:60',
         'public' => true,
       ),
@@ -1031,7 +1052,7 @@
         'group' => 'hero',
         'label' => 'Titre — suite',
         'type' => 'text',
-        'default' => 'du producteur à votre table',
+        'default' => 'sur une vraie ferme-école',
         'rules' => 'nullable|string|max:160',
         'public' => true,
       ),
@@ -1040,7 +1061,7 @@
         'group' => 'hero',
         'label' => 'Sous-titre (paragraphe)',
         'type' => 'textarea',
-        'default' => 'La Ferme Divinform vous propose ses produits laitiers, viandes, œufs et bien plus, issus d\'un élevage respectueux du bien-être animal et d\'une agriculture régénérative.',
+        'default' => 'Nos formations pratiques en élevage et en agriculture vous donnent les compétences et la confiance nécessaires pour lancer votre propre exploitation, quel que soit votre niveau de départ.',
         'rules' => 'nullable|string|max:600',
         'public' => true,
       ),
@@ -1049,7 +1070,7 @@
         'group' => 'hero',
         'label' => 'Bouton principal',
         'type' => 'text',
-        'default' => '🧺 Découvrir nos produits',
+        'default' => '🎓 Découvrir nos formations',
         'rules' => 'nullable|string|max:60',
         'public' => true,
       ),
@@ -1071,14 +1092,51 @@
         'rules' => 'nullable|string|max:400',
         'public' => true,
       ),
-      'guarantee_months' => 
+      'hero_card_title' => 
       array (
         'group' => 'hero',
-        'label' => 'Garantie fraîcheur (jours)',
-        'type' => 'number',
-        'default' => '0',
-        'rules' => 'nullable|integer|min:0|max:120',
+        'label' => 'Encart — titre',
+        'type' => 'text',
+        'default' => 'LA FERME-ÉCOLE',
+        'rules' => 'nullable|string|max:60',
         'public' => true,
+      ),
+      'hero_card_items' => 
+      array (
+        'group' => 'hero',
+        'label' => 'Encart — points clés',
+        'type' => 'list',
+        'public' => true,
+        'rules' => 'nullable|array',
+        'item_label' => 'Point',
+        'fields' => 
+        array (
+          0 => 
+          array (
+            'key' => 'label',
+            'label' => 'Intitulé',
+            'type' => 'text',
+          ),
+        ),
+        'default' => 
+        array (
+          0 => 
+          array (
+            'label' => '🎓 Formations certifiantes',
+          ),
+          1 => 
+          array (
+            'label' => '🐄 Travaux pratiques',
+          ),
+          2 => 
+          array (
+            'label' => '📋 Accompagnement projet',
+          ),
+          3 => 
+          array (
+            'label' => '🤝 Suivi post-formation',
+          ),
+        ),
       ),
       'stats' => 
       array (
@@ -1107,39 +1165,66 @@
         array (
           0 => 
           array (
-            'num' => '100%',
-            'label' => 'Fermier & naturel',
+            'num' => '6',
+            'label' => 'Formations au catalogue',
           ),
           1 => 
           array (
-            'num' => '15 ans',
-            'label' => 'D\'élevage passionné',
+            'num' => '100%',
+            'label' => 'Pratique sur la ferme',
           ),
           2 => 
           array (
-            'num' => '0',
-            'label' => 'Intermédiaire',
+            'num' => '15 ans',
+            'label' => 'D\'expérience en élevage',
           ),
           3 => 
           array (
             'num' => '7j/7',
-            'label' => 'Vente à la ferme',
+            'label' => 'Accompagnement',
           ),
         ),
+      ),
+      'formations_eyebrow' => 
+      array (
+        'group' => 'formations',
+        'label' => 'Sur-titre',
+        'type' => 'text',
+        'default' => 'Notre catalogue',
+        'rules' => 'nullable|string|max:120',
+        'public' => true,
+      ),
+      'formations_title' => 
+      array (
+        'group' => 'formations',
+        'label' => 'Titre',
+        'type' => 'text',
+        'default' => 'Nos formations',
+        'rules' => 'nullable|string|max:160',
+        'public' => true,
+      ),
+      'formations_subtitle' => 
+      array (
+        'group' => 'formations',
+        'label' => 'Description',
+        'type' => 'textarea',
+        'default' => 'Des formations courtes, concrètes et menées sur le terrain, pour apprendre un métier et vivre de son élevage.',
+        'rules' => 'nullable|string|max:400',
+        'public' => true,
       ),
       'categories_eyebrow' => 
       array (
         'group' => 'sections',
-        'label' => 'Catégories — sur-titre',
+        'label' => 'La ferme — sur-titre',
         'type' => 'text',
-        'default' => 'Nos univers',
+        'default' => 'Notre ferme',
         'rules' => 'nullable|string|max:120',
         'public' => true,
       ),
       'categories_title' => 
       array (
         'group' => 'sections',
-        'label' => 'Catégories — titre',
+        'label' => 'La ferme — titre',
         'type' => 'text',
         'default' => 'Les produits de la ferme',
         'rules' => 'nullable|string|max:160',
@@ -1148,9 +1233,9 @@
       'categories_subtitle' => 
       array (
         'group' => 'sections',
-        'label' => 'Catégories — description',
+        'label' => 'La ferme — description',
         'type' => 'textarea',
-        'default' => 'Des produits laitiers aux visites de la ferme, découvrez tout ce que la Ferme Divinform a à offrir, en circuit court.',
+        'default' => 'Notre ferme-école est une exploitation en activité. Les produits issus de nos ateliers pédagogiques sont proposés en vente directe.',
         'rules' => 'nullable|string|max:400',
         'public' => true,
       ),
@@ -1168,7 +1253,7 @@
         'group' => 'sections',
         'label' => 'Contact — titre',
         'type' => 'text',
-        'default' => 'Envie de produits fermiers ?',
+        'default' => 'Une question sur nos formations ?',
         'rules' => 'nullable|string|max:160',
         'public' => true,
       ),
@@ -1177,7 +1262,7 @@
         'group' => 'sections',
         'label' => 'Contact — description',
         'type' => 'textarea',
-        'default' => 'Notre équipe est à votre disposition pour vos commandes, la vente directe et l\'organisation de vos visites à la ferme.',
+        'default' => 'Notre équipe vous renseigne sur les programmes, les dates de session et les modalités d\'inscription.',
         'rules' => 'nullable|string|max:400',
         'public' => true,
       ),
@@ -1186,7 +1271,7 @@
         'group' => 'sections',
         'label' => 'Encart CTA — titre',
         'type' => 'text',
-        'default' => 'Envie de goûter à la ferme ?',
+        'default' => 'Prêt à vous former ?',
         'rules' => 'nullable|string|max:160',
         'public' => true,
       ),
@@ -1195,7 +1280,7 @@
         'group' => 'sections',
         'label' => 'Encart CTA — sous-titre',
         'type' => 'textarea',
-        'default' => 'Contactez-nous dès maintenant pour vos commandes et la réservation de votre panier fermier.',
+        'default' => 'Contactez-nous pour connaître les prochaines sessions et réserver votre place.',
         'rules' => 'nullable|string|max:300',
         'public' => true,
       ),
@@ -1204,7 +1289,7 @@
         'group' => 'why',
         'label' => 'Sur-titre',
         'type' => 'text',
-        'default' => 'Nos engagements',
+        'default' => 'Notre pédagogie',
         'rules' => 'nullable|string|max:120',
         'public' => true,
       ),
@@ -1213,7 +1298,7 @@
         'group' => 'why',
         'label' => 'Titre',
         'type' => 'text',
-        'default' => 'Pourquoi choisir la Ferme Divinform ?',
+        'default' => 'Pourquoi se former chez nous ?',
         'rules' => 'nullable|string|max:160',
         'public' => true,
       ),
@@ -1222,7 +1307,7 @@
         'group' => 'why',
         'label' => 'Description',
         'type' => 'textarea',
-        'default' => 'Des produits sains et savoureux, issus d\'un élevage responsable et d\'un circuit ultra-court.',
+        'default' => 'Une formation qui se vit sur le terrain, transmise par des éleveurs en activité.',
         'rules' => 'nullable|string|max:400',
         'public' => true,
       ),
@@ -1259,39 +1344,39 @@
         array (
           0 => 
           array (
-            'icon' => '🌿',
-            'title' => '100% naturel',
-            'desc' => 'Des produits sans additif ni conservateur, issus d\'une agriculture régénérative respectueuse des sols.',
+            'icon' => '🎓',
+            'title' => 'Une ferme-école',
+            'desc' => 'Vous n\'apprenez pas dans une salle : vous apprenez sur une ferme en activité, au contact des animaux.',
           ),
           1 => 
           array (
-            'icon' => '🐄',
-            'title' => 'Bien-être animal',
-            'desc' => 'Nos animaux sont élevés en plein air, au pâturage, dans le respect de leur rythme naturel.',
+            'icon' => '👨‍🌾',
+            'title' => 'Des formateurs éleveurs',
+            'desc' => 'Nos formateurs vivent de leur élevage. Ils enseignent ce qu\'ils pratiquent chaque jour.',
           ),
           2 => 
           array (
-            'icon' => '🧺',
-            'title' => 'Vente directe',
-            'desc' => 'Du producteur à votre table : circuit court, sans intermédiaire et au juste prix.',
+            'icon' => '🔧',
+            'title' => 'De la pratique avant tout',
+            'desc' => 'La majorité du temps est consacrée aux travaux pratiques, pas à la théorie.',
           ),
           3 => 
           array (
-            'icon' => '🌱',
-            'title' => 'Fraîcheur garantie',
-            'desc' => 'Lait, œufs et produits récoltés et préparés chaque jour à la ferme.',
+            'icon' => '📋',
+            'title' => 'Un projet, pas un cours',
+            'desc' => 'Chaque stagiaire repart avec un plan d\'installation chiffré et adapté à ses moyens.',
           ),
           4 => 
           array (
-            'icon' => '👨‍🌾',
-            'title' => 'Savoir-faire fermier',
-            'desc' => 'Un savoir-faire artisanal cultivé avec passion au fil des saisons.',
+            'icon' => '🤝',
+            'title' => 'Un suivi après la formation',
+            'desc' => 'Nous restons joignables pour vous accompagner dans vos premiers mois d\'activité.',
           ),
           5 => 
           array (
-            'icon' => '🤝',
-            'title' => 'Circuit local',
-            'desc' => 'Nous privilégions les clients de notre région pour un impact durable et solidaire.',
+            'icon' => '🏅',
+            'title' => 'Une attestation reconnue',
+            'desc' => 'Une attestation de fin de formation vous est remise à l\'issue de chaque session.',
           ),
         ),
       ),
@@ -1300,7 +1385,7 @@
         'group' => 'footer',
         'label' => 'Texte « À propos »',
         'type' => 'textarea',
-        'default' => 'La Ferme Divinform, votre ferme en vente directe. Produits laitiers, viandes, œufs et bien plus, issus d\'un élevage naturel et respectueux.',
+        'default' => 'Centre de formation en élevage et en agriculture. Nous formons celles et ceux qui veulent vivre de la terre, sur une ferme-école en activité.',
         'rules' => 'nullable|string|max:400',
         'public' => true,
       ),
@@ -1309,7 +1394,7 @@
         'group' => 'footer',
         'label' => 'Mention copyright',
         'type' => 'text',
-        'default' => '© {year} Ferme Divinform. Tous droits réservés.',
+        'default' => '© {year} C.F Divin Élevage. Tous droits réservés.',
         'rules' => 'nullable|string|max:200',
         'public' => true,
         'help' => 'Utilisez {year} pour l\'année courante.',
@@ -1335,19 +1420,19 @@
         array (
           0 => 
           array (
-            'label' => 'Vente directe à la ferme',
+            'label' => 'Formations en élevage',
           ),
           1 => 
           array (
-            'label' => 'Paniers fermiers',
+            'label' => 'Formations en agriculture',
           ),
           2 => 
           array (
-            'label' => 'Visites & activités',
+            'label' => 'Accompagnement des porteurs de projet',
           ),
           3 => 
           array (
-            'label' => 'Livraison locale',
+            'label' => 'Ferme-école & travaux pratiques',
           ),
         ),
       ),
@@ -1356,7 +1441,7 @@
         'group' => 'seo',
         'label' => 'Titre de la page (onglet navigateur)',
         'type' => 'text',
-        'default' => 'Ferme Divinform — Produits fermiers en vente directe',
+        'default' => 'C.F Divin Élevage — Centre de formation en élevage au Gabon',
         'rules' => 'nullable|string|max:160',
         'public' => true,
       ),
@@ -1365,7 +1450,7 @@
         'group' => 'seo',
         'label' => 'Méta-description',
         'type' => 'textarea',
-        'default' => 'Ferme Divinform — produits laitiers, viandes, œufs et produits fermiers issus d\'un élevage naturel. Vente directe du producteur au consommateur.',
+        'default' => 'Centre de formation en élevage et en agriculture au Gabon. Formations pratiques en aviculture, pisciculture, élevage porcin et cuniculture, sur une ferme-école en activité.',
         'rules' => 'nullable|string|max:300',
         'public' => true,
       ),

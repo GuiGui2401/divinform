@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchCategories } from '@/store/slices/categoriesSlice'
+import { fetchFormations } from '@/store/slices/formationsSlice'
 import { fetchProducts }   from '@/store/slices/productsSlice'
 import { fetchSettings }   from '@/store/slices/settingsSlice'
 import { useSettings }     from '@/hooks/useSettings'
@@ -15,6 +16,7 @@ export default function PublicLayout() {
   const { get } = useSettings()
 
   useEffect(() => {
+    dispatch(fetchFormations())
     dispatch(fetchCategories())
     dispatch(fetchProducts())
     dispatch(fetchSettings())

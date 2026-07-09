@@ -1,18 +1,31 @@
-# Ferme Divinform
+# C.F Divin Élevage
 
-Monorepo de l'application **Ferme Divinform** — un site de vente directe de produits
-fermiers (produits laitiers, viandes, œufs, animaux d'élevage, laine, visites de la ferme)
-avec un backend Laravel et un frontend React.
+Monorepo de l'application **C.F Divin Élevage** — le site d'un **centre de formation
+en élevage et en agriculture**, adossé à une ferme-école en activité.
+
+Le site s'articule en deux volets, dans cet ordre :
+
+1. **Le centre de formation** (cœur du site) : catalogue de formations, sessions
+   programmées, demandes d'inscription en ligne.
+2. **La ferme** (volet secondaire) : les produits issus des ateliers pédagogiques,
+   proposés en vente directe.
 
 ## Architecture
 
 - `divinform-api/` : backend API REST Laravel 12 (JWT) — sert `https://admin.divinform.com`
 - `divinform-react/` : frontend React/Vite (vitrine + dashboard) — sert `https://divinform.com`
 
-Le schéma de données (catégories → produits, product_specs, settings, users) est générique.
-Tout le contenu de la ferme et l'identité du site vivent dans :
+Deux domaines métier cohabitent dans le schéma :
+- `formations` → `formation_sessions` → `inscriptions` (le centre de formation)
+- `categories` → `products` → `product_specs` (la ferme)
+
+L'identité du site et tous les textes de la page d'accueil vivent dans :
 - `divinform-api/config/site_settings.php` (registre central des réglages/branding)
-- `divinform-api/database/seeders/` (catégories, produits, utilisateurs)
+- `divinform-api/database/seeders/` (formations, catégories, produits, utilisateurs)
+
+> ⚠️ `config/site_settings.php` est **lu depuis le cache de configuration**.
+> Toute modification du registre exige `php artisan config:clear && php artisan config:cache`
+> pour être prise en compte, y compris par les seeders.
 
 ## Installation globale
 
@@ -83,6 +96,37 @@ npm run dev
   `https://admin.divinform.com`. Base MySQL `c0divinform`.
   `.env` doit définir `FRONTEND_URL=https://divinform.com` (CORS) et l'`open_basedir`
   du pool php-fpm doit inclure la racine de l'app (au-dessus de `public/`).
+
+## Bascule « ferme » → « centre de formation »
+
+Le site a d'abord été livré orienté vente de produits fermiers. La bascule vers le
+centre de formation se fait en quatre commandes, **dans cet ordre** :
+
+```bash
+cd divinform-api
+php artisan migrate --force                     # crée formations, formation_sessions, inscriptions
+php artisan config:clear && php artisan config:cache   # indispensable : recharge site_settings.php
+php artisan db:seed --class=FormationSeeder     # catalogue de formations de démarrage
+php artisan db:seed --class=IdentitySeeder      # bascule les textes du site
+php artisan route:clear && php artisan route:cache     # active /v1/formations et /v1/inscriptions
+```
+
+`IdentitySeeder` **préserve** les réglages déjà personnalisés depuis le back-office
+(nom du site, slogan, logo, téléphones, WhatsApp, réseaux sociaux) et ne remplace que
+les textes restés orientés « ferme ». La liste exacte est en tête du fichier.
+
+Puis, côté frontend :
+
+```bash
+cd divinform-react && npm run build
+```
+
+### Numéros de téléphone
+
+Les numéros sont saisis au **format national gabonais** (`060337821`). La fonction
+`toE164()` de `src/utils/contact.js` retire le zéro initial pour construire les liens
+`wa.me` et `tel:` : un lien `wa.me/241060337821` (avec le zéro) pointe vers un tout
+autre compte WhatsApp que `wa.me/24160337821`.
 
 ## Notes
 
